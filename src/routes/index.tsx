@@ -16,30 +16,34 @@ function Home() {
   return (
     <SiteShell invertHeader>
       <section className="overflow-hidden bg-night text-night-fg">
-        <div className="relative h-[46vh] min-h-[280px] max-h-[460px] sm:h-[52vh] sm:min-h-[340px]">
-          <LedgerField className="absolute inset-0" />
-        </div>
-        <div className="mx-auto max-w-6xl px-5 pb-14 pt-8 sm:px-8 sm:pb-20 sm:pt-10">
-          <p className="font-mono text-xs tracking-[0.2em] text-signal">
-            Licensed core · Global banks
-          </p>
-          <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
-            {site.tagline}
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-night-fg/85 sm:text-lg">
-            One book. Your licence. On-ramp and off-ramp — licensed under your
-            brand, not ours.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" variant="invert">
-              <Link to="/briefing">
-                Request a briefing
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="nightOutline">
-              <Link to="/platform">See the platform</Link>
-            </Button>
+        <div className="relative min-h-[420px] sm:min-h-[480px]">
+          <div className="absolute inset-0 h-[28vh] min-h-[160px] max-h-[240px] sm:h-[32vh]">
+            <LedgerField className="absolute inset-0" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-night/20 via-night/55 to-night" />
+          </div>
+          <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-[calc(28vh-2rem)] sm:px-8 sm:pb-20 sm:pt-[calc(32vh-1rem)]">
+            <p className="font-mono text-xs tracking-[0.2em] text-signal">
+              Licensed core · African banks, BSPs & FIs
+            </p>
+            <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+              {site.tagline}
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-night-fg/85 sm:text-lg">
+              The same stack that powers Cush Payments, licensed under your brand.
+              One ledger. Your policy. PAPSS, GHIPSS and mobile money on the way
+              out.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" variant="invert">
+                <Link to="/briefing">
+                  Request a briefing
+                  <ArrowRight className="size-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="nightOutline">
+                <Link to="/platform">See the platform</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -139,11 +143,11 @@ function Home() {
           <div className="mb-10">
             <p className="font-mono text-xs tracking-[0.16em] text-signal">04 / Connectivity</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-night-fg sm:text-4xl">
-              On-ramp and off-ramp. One book.
+              Money in from the UK, Europe and the US. Money out on African networks.
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-night-muted">
-              Clearing, RTGS, cards and correspondent rails post to the same ledger
-              they pay from. Click a scheme.
+              PAPSS, GHIPSS and mobile money post to the same ledger as Faster
+              Payments, SEPA and SWIFT. Click a scheme.
             </p>
           </div>
           <RailMesh />
@@ -203,7 +207,7 @@ function Home() {
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Built by people who have put non-bank PSPs onto Bank of England rails
-              and run cores inside global banks.
+              and run cores inside regulated banks — now for African institutions.
             </p>
           </div>
           <div className="divide-y divide-line border-y border-line lg:col-span-8">

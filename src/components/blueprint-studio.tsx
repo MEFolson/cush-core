@@ -25,7 +25,7 @@ export function BlueprintStudio() {
       },
       rails: {
         in: ["FPS", "SEPA", "Fedwire", "SWIFT"],
-        out: ["CHAPS", "TARGET2", "FAST", "PIX"],
+        out: ["PAPSS", "GHIPSS", "MoMo", "CHAPS", "SWIFT"],
       },
       pricing: { per_customer_month_usd: 1 },
     }),

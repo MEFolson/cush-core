@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Cush Core is the AI-native core banking platform licensed to global banks and financial institutions. Immutable ledger. Policy you control. Clearing, RTGS and instant rails on one book.",
+          "Cush Core is the AI-native core banking platform licensed to African banks, BSPs and financial institutions. Immutable ledger. Policy you control. PAPSS, GHIPSS and mobile money on one book.",
       },
       { name: "theme-color", content: "#031337" },
     ],

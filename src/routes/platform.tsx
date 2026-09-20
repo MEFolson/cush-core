@@ -75,7 +75,7 @@ function PlatformPage() {
             On-ramp in. Off-ramp out.
           </h2>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-night-muted">
-            FPS, SEPA, Fedwire, cards and SWIFT inbound. CHAPS, TARGET2, FAST, PIX
+            FPS, SEPA, Fedwire, cards and SWIFT inbound. PAPSS, GHIPSS, mobile money,
             and SWIFT outbound. Agents route; the ledger is the book.
           </p>
           <div className="mt-10">

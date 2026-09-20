@@ -164,7 +164,7 @@ export function BriefingForm() {
           <Field label="Markets of interest" htmlFor="corridor">
             <Input
               id="corridor"
-              placeholder="UK–SEPA, USD correspondent, Singapore FAST…"
+              placeholder="UK→Ghana remittance, PAPSS settlement, MoMo last mile…"
               value={fields.corridor}
               onChange={(e) => update("corridor", e.target.value)}
             />

@@ -12,7 +12,7 @@ function InstitutionsPage() {
       <PageIntro
         folio="04"
         kicker="Institutions"
-        title="For the global bank, not another overlay."
+        title="For African banks and BSPs, not another overlay."
         lead="Cush Core is licensed to banks, payment companies and governments. The buyer is the institution that must still explain the books."
       />
 
