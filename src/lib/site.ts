@@ -1,7 +1,7 @@
 export const site = {
   name: "Cush Core",
   house: "Cush Core",
-  tagline: "AI-native core banking for Africa — built to be examined.",
+  tagline: "The core a global bank can examine.",
   email: "mfolson@cushpayments.com",
   phone: "+44 7802 467665",
   city: "London",
@@ -60,11 +60,11 @@ export const layers = [
     index: "04",
     name: "Multi-rail connectivity",
     title: "Every scheme. One book.",
-    body: "Money in from the UK, Europe and the US. Money out on African networks — PAPSS, GHIPSS and mobile money — on the same ledger. Routed under your policy, not a second vendor estate.",
+    body: "Clearing, RTGS and instant payments on the same ledger. Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, PIX — routed under your policy, not a second vendor estate.",
     points: [
-      "Faster Payments, SEPA, Fedwire / ACH, SWIFT inbound",
-      "PAPSS, GHIPSS and mobile money last mile",
-      "CHAPS, TARGET2 and correspondent off-ramp",
+      "Faster Payments, SEPA, Fedwire / ACH, SWIFT",
+      "CHAPS, TARGET2 and local RTGS",
+      "FAST, PIX and other instant schemes",
       "Routing under cost, success and policy",
     ],
   },
@@ -103,27 +103,6 @@ export const inboundRails = [
 
 export const outboundRails = [
   {
-    code: "PAPSS",
-    name: "PAPSS",
-    region: "Pan-African",
-    blurb:
-      "Pan-African Payment and Settlement System. Cross-border African settlement on the same ledger as the account.",
-  },
-  {
-    code: "GHIPSS",
-    name: "GHIPSS",
-    region: "Ghana",
-    blurb:
-      "Ghana Interbank Payment and Settlement Systems. Domestic clearing under the institution’s brand.",
-  },
-  {
-    code: "MoMo",
-    name: "Mobile money",
-    region: "Africa last mile",
-    blurb:
-      "MTN, Vodafone and other mobile-money wallets as first-class off-ramps — not a second vendor estate.",
-  },
-  {
     code: "CHAPS",
     name: "CHAPS",
     region: "United Kingdom",
@@ -136,6 +115,20 @@ export const outboundRails = [
     region: "Euro area",
     blurb:
       "Euro RTGS beside SEPA. One control plane for high-value and retail, not two vendor models.",
+  },
+  {
+    code: "FAST",
+    name: "FAST",
+    region: "Singapore",
+    blurb:
+      "Instant Singapore dollar rail. Name enquiry before confirmation. The customer sees your brand.",
+  },
+  {
+    code: "PIX",
+    name: "PIX",
+    region: "Brazil",
+    blurb:
+      "Instant Brazilian real. Routed on cost, success rate and policy with the rest of the book.",
   },
 ] as const;
 
@@ -184,30 +177,6 @@ export const onRamps = [
 
 export const offRamps = [
   {
-    code: "PAPSS",
-    name: "PAPSS",
-    region: "Pan-African",
-    kind: "Pan-African settlement",
-    blurb:
-      "Off-ramp. Pan-African Payment and Settlement System — cross-border African settlement on the same book.",
-  },
-  {
-    code: "GHIPSS",
-    name: "GHIPSS",
-    region: "Ghana",
-    kind: "Ghana clearing",
-    blurb:
-      "Off-ramp. Ghana Interbank Payment and Settlement Systems under the institution’s brand.",
-  },
-  {
-    code: "MoMo",
-    name: "Mobile money",
-    region: "Africa last mile",
-    kind: "Wallet last mile",
-    blurb:
-      "Off-ramp. Mobile-money wallets as first-class last mile — posted to the same ledger as the account.",
-  },
-  {
     code: "CHAPS",
     name: "CHAPS",
     region: "United Kingdom",
@@ -216,12 +185,36 @@ export const offRamps = [
       "Off-ramp. Same-day high-value settlement under standing mandate — not a second payments hub.",
   },
   {
+    code: "TGT",
+    name: "TARGET2",
+    region: "Euro area",
+    kind: "Euro RTGS",
+    blurb:
+      "Off-ramp. High-value euro beside SEPA. One control plane for wholesale and retail.",
+  },
+  {
     code: "SWOUT",
     name: "SWIFT outbound",
     region: "International",
     kind: "Correspondent out",
     blurb:
       "Off-ramp. Correspondent instructions leave only after the ledger post and the agent trace.",
+  },
+  {
+    code: "FAST",
+    name: "FAST",
+    region: "Singapore",
+    kind: "Instant outbound",
+    blurb:
+      "Off-ramp. Instant Singapore dollar with name enquiry before confirmation. The customer sees your brand.",
+  },
+  {
+    code: "PIX",
+    name: "PIX",
+    region: "Brazil",
+    kind: "Instant outbound",
+    blurb:
+      "Off-ramp. Instant Brazilian real, routed on cost, success rate and policy with the rest of the book.",
   },
 ] as const;
 
@@ -244,7 +237,7 @@ export const products = [
   {
     id: "payments",
     name: "Payments & remittance",
-    line: "The corridors that power Cush Payments, available as a product you can offer — on the same ledger as the account.",
+    line: "Clearing, RTGS, instant schemes, correspondent books and remittance as products you offer — on the same ledger as the account.",
   },
   {
     id: "kyc",
@@ -262,9 +255,9 @@ export const institutions = [
   {
     id: "global",
     index: "01",
-    name: "African banks & BSPs",
+    name: "Global banks",
     title: "Replace the core without a twelve-month programme.",
-    body: "Most institutions still stitch a European core to a payments hub and a wallet vendor. Cush Core is one licensed system: your brand, your policy, your books — from the account to PAPSS, GHIPSS and mobile money.",
+    body: "Most institutions still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensed system: your brand, your policy, your books — from the account to the rail.",
   },
   {
     id: "correspondent",
@@ -300,7 +293,7 @@ export const agents = [
     id: "routing",
     name: "Routing",
     title: "Cheapest viable rail.",
-    body: "Agents select among Faster Payments, SEPA, Fedwire, SWIFT, PAPSS, GHIPSS, mobile money and correspondent rails on cost, success rate and mandate — not a static waterfall.",
+    body: "Agents select among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST and PIX on cost, success rate and mandate — not a static waterfall.",
   },
   {
     id: "recon",
@@ -447,7 +440,7 @@ export const examinationFaqs = [
   },
   {
     q: "Which rails on day one?",
-    a: "On-ramp: Faster Payments, SEPA, Fedwire / ACH, card acquiring, SWIFT inbound. Off-ramp: PAPSS, GHIPSS, mobile money, CHAPS, SWIFT outbound. Routing is under cost, success rate and policy — not a static waterfall.",
+    a: "On-ramp: Faster Payments, SEPA, Fedwire / ACH, card acquiring, SWIFT inbound. Off-ramp: CHAPS, TARGET2, SWIFT outbound, FAST, PIX. Routing is under cost, success rate and policy — not a static waterfall.",
   },
   {
     q: "Can a supervisor replay a payment?",

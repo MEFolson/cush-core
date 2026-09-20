@@ -23,15 +23,14 @@ function Home() {
           </div>
           <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-[calc(28vh-2rem)] sm:px-8 sm:pb-20 sm:pt-[calc(32vh-1rem)]">
             <p className="font-mono text-xs tracking-[0.2em] text-signal">
-              Licensed core · African banks, BSPs & FIs
+              Licensed core · Global banks
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               {site.tagline}
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-night-fg/85 sm:text-lg">
-              The same stack that powers Cush Payments, licensed under your brand.
-              One ledger. Your policy. PAPSS, GHIPSS and mobile money on the way
-              out.
+              One book. Your licence. On-ramp and off-ramp — licensed under your
+              brand, not ours.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" variant="invert">
@@ -143,11 +142,11 @@ function Home() {
           <div className="mb-10">
             <p className="font-mono text-xs tracking-[0.16em] text-signal">04 / Connectivity</p>
             <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-night-fg sm:text-4xl">
-              Money in from the UK, Europe and the US. Money out on African networks.
+              On-ramp and off-ramp. One book.
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-night-muted">
-              PAPSS, GHIPSS and mobile money post to the same ledger as Faster
-              Payments, SEPA and SWIFT. Click a scheme.
+              Clearing, RTGS, cards and correspondent rails post to the same ledger
+              they pay from. Click a scheme.
             </p>
           </div>
           <RailMesh />
@@ -207,7 +206,7 @@ function Home() {
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Built by people who have put non-bank PSPs onto Bank of England rails
-              and run cores inside regulated banks — now for African institutions.
+              and run cores inside global banks.
             </p>
           </div>
           <div className="divide-y divide-line border-y border-line lg:col-span-8">
