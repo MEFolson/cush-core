@@ -9,13 +9,13 @@ export type CanvasTokens = {
 };
 
 const fallback: CanvasTokens = {
-  night: "#ffffff",
-  night2: "#f4f6f9",
-  nightFg: "#0b1220",
-  nightMuted: "#5c6b7e",
-  nightLine: "#e6ebf2",
-  signal: "#1d4ed8",
-  paper: "#ffffff",
+  night: "#f7f4ef",
+  night2: "#efeae2",
+  nightFg: "#1c1917",
+  nightMuted: "#6b645c",
+  nightLine: "#ddd4c8",
+  signal: "#a67c2d",
+  paper: "#f7f4ef",
 };
 
 function read(el: Element, name: string, alt: string) {

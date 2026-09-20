@@ -5,19 +5,19 @@
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-paper: #ffffff;
-  --color-paper-2: #f4f6f9;
-  --color-ink: #0b1220;
-  --color-ink-soft: #243247;
-  --color-muted: #5c6b7e;
-  --color-line: #e6ebf2;
-  --color-signal: #1d4ed8;
-  --color-signal-fg: #ffffff;
-  --color-night: #0b1220;
-  --color-night-2: #162033;
-  --color-night-fg: #f8fafc;
-  --color-night-muted: #94a3b8;
-  --color-night-line: #243247;
+  --color-paper: #f7f4ef;
+  --color-paper-2: #efeae2;
+  --color-ink: #1c1917;
+  --color-ink-soft: #3f3a34;
+  --color-muted: #6b645c;
+  --color-line: #ddd4c8;
+  --color-signal: #a67c2d;
+  --color-signal-fg: #f7f4ef;
+  --color-night: #1c1917;
+  --color-night-2: #292524;
+  --color-night-fg: #f7f4ef;
+  --color-night-muted: #a8a29e;
+  --color-night-line: #44403c;
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
