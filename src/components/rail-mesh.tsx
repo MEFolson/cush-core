@@ -154,7 +154,7 @@ export function RailMesh() {
   const inbound = selected.dir === "on";
 
   return (
-    <div className="border border-line bg-paper text-ink">
+    <div className="border-2 border-line bg-paper text-ink">
       <div className="grid gap-0 lg:grid-cols-12">
         <div ref={wrapRef} className={cn("relative h-[340px] sm:h-[420px] lg:col-span-8")}>
           <canvas

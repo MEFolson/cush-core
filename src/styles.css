@@ -5,19 +5,19 @@
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-paper: #f7f4ef;
-  --color-paper-2: #efeae2;
-  --color-ink: #1c1917;
-  --color-ink-soft: #3f3a34;
-  --color-muted: #6b645c;
-  --color-line: #ddd4c8;
-  --color-signal: #a67c2d;
-  --color-signal-fg: #f7f4ef;
-  --color-night: #1c1917;
-  --color-night-2: #292524;
-  --color-night-fg: #f7f4ef;
-  --color-night-muted: #a8a29e;
-  --color-night-line: #44403c;
+  --color-paper: #f3eee6;
+  --color-paper-2: #e8e0d4;
+  --color-ink: #141210;
+  --color-ink-soft: #2c2824;
+  --color-muted: #5a534c;
+  --color-line: #cfc4b4;
+  --color-signal: #b8860b;
+  --color-signal-fg: #f3eee6;
+  --color-night: #141210;
+  --color-night-2: #1f1c19;
+  --color-night-fg: #f3eee6;
+  --color-night-muted: #a39a8e;
+  --color-night-line: #3d3832;
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -52,8 +52,12 @@
   h4 {
     text-wrap: balance;
     font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+  }
+
+  h1 {
+    font-weight: 700;
   }
 
   p {

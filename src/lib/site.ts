@@ -276,7 +276,7 @@ export const institutions = [
   {
     id: "sovereign",
     index: "04",
-    name: "Governments & development banks",
+    name: "Central banks & development banks",
     title: "National-scale rails with an examination trail.",
     body: "The capacity crunch is licensed cores and compliance officers, not another SaaS overlay. Agentic AI on an immutable ledger is how that expertise scales without a new IT estate.",
   },
