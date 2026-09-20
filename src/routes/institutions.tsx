@@ -16,7 +16,7 @@ function InstitutionsPage() {
         lead="Cush Core is licensed to banks, payment companies and governments. The buyer is the institution that must still explain the books."
       />
 
-      <section className="border-b border-line bg-night text-night-fg">
+      <section className="border-b border-line bg-paper text-ink">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
           <p className="max-w-xl text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
             The meeting that matters is with the supervisor, the correspondent, and
@@ -48,13 +48,13 @@ function InstitutionsPage() {
         ))}
       </section>
 
-      <section className="bg-night text-night-fg">
+      <section className="bg-paper text-ink">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-16 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p className="max-w-lg text-sm leading-relaxed text-night-muted">
+          <p className="max-w-lg text-sm leading-relaxed text-muted">
             If you already run international, correspondent or a multi-entity
             book, we will walk the stack against that mandate.
           </p>
-          <Button asChild variant="invert">
+          <Button asChild variant="primary">
             <Link to="/briefing">Request a briefing</Link>
           </Button>
         </div>

@@ -68,13 +68,13 @@ function PlatformPage() {
         </div>
       </section>
 
-      <section className="bg-night">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="font-mono text-xs tracking-[0.16em] text-signal">Connectivity</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-night-fg sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-ink sm:text-4xl">
             On-ramp in. Off-ramp out.
           </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-night-muted">
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
             FPS, SEPA, Fedwire, cards and SWIFT inbound. CHAPS, TARGET2, FAST, PIX
             and SWIFT outbound. Agents route; the ledger is the book.
           </p>
@@ -82,10 +82,10 @@ function PlatformPage() {
             <RailMesh />
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-night-muted">
+            <p className="text-sm text-muted">
               Simple per-customer price. Approximately one dollar a month, wherever you operate.
             </p>
-            <Button asChild variant="invert">
+            <Button asChild variant="primary">
               <Link to="/briefing">Discuss a licence</Link>
             </Button>
           </div>

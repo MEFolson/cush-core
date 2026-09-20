@@ -14,32 +14,32 @@ export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
   return (
-    <SiteShell invertHeader>
-      <section className="overflow-hidden bg-night text-night-fg">
-        <div className="relative min-h-[420px] sm:min-h-[480px]">
-          <div className="absolute inset-0 h-[28vh] min-h-[160px] max-h-[240px] sm:h-[32vh]">
+    <SiteShell>
+      <section className="overflow-hidden border-b border-line bg-paper text-ink">
+        <div className="relative min-h-[380px] sm:min-h-[440px]">
+          <div className="absolute inset-0 h-[24vh] min-h-[140px] max-h-[200px] sm:h-[28vh]">
             <LedgerField className="absolute inset-0" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-night/20 via-night/55 to-night" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-paper/10 via-paper/70 to-paper" />
           </div>
-          <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-[calc(28vh-2rem)] sm:px-8 sm:pb-20 sm:pt-[calc(32vh-1rem)]">
+          <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-[calc(24vh-1.5rem)] sm:px-8 sm:pb-20 sm:pt-[calc(28vh-0.5rem)]">
             <p className="font-mono text-xs tracking-[0.2em] text-signal">
               Licensed core · Global banks
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               {site.tagline}
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-night-fg/85 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               One book. Your licence. On-ramp and off-ramp — licensed under your
               brand, not ours.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" variant="invert">
+              <Button asChild size="lg" variant="primary">
                 <Link to="/briefing">
                   Request a briefing
                   <ArrowRight className="size-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="nightOutline">
+              <Button asChild size="lg" variant="outline">
                 <Link to="/platform">See the platform</Link>
               </Button>
             </div>
@@ -100,7 +100,7 @@ function Home() {
               <ArrowRight className="size-4" />
             </Link>
           </div>
-          <ArchitectureExplorer tone="night" />
+          <ArchitectureExplorer />
         </div>
       </section>
 
@@ -137,14 +137,14 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-b border-line bg-night">
+      <section className="border-b border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
           <div className="mb-10">
             <p className="font-mono text-xs tracking-[0.16em] text-signal">04 / Connectivity</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-night-fg sm:text-4xl">
+            <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-ink sm:text-4xl">
               On-ramp and off-ramp. One book.
             </h2>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-night-muted">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
               Clearing, RTGS, cards and correspondent rails post to the same ledger
               they pay from. Click a scheme.
             </p>
@@ -233,19 +233,19 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-night text-night-fg">
+      <section className="border-t border-line bg-paper-2 text-ink">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-20 sm:px-8 sm:py-24 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-xl">
             <p className="font-mono text-xs tracking-[0.16em] text-signal">Private briefing</p>
             <h2 className="mt-4 text-3xl font-medium tracking-[-0.03em] sm:text-5xl">
               Walk the control plane with a principal.
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-night-muted">
+            <p className="mt-4 text-sm leading-relaxed text-muted">
               Tell us what you want to offer. We will walk the stack with you —
               ledger, agents, rails and the books a supervisor will ask for.
             </p>
           </div>
-          <Button asChild size="lg" variant="invert">
+          <Button asChild size="lg" variant="primary">
             <Link to="/briefing">
               Request a briefing
               <ArrowRight className="size-4" />
