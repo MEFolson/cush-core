@@ -9,8 +9,8 @@ export function SiteFooter() {
         <div className="md:col-span-5">
           <Mark invert stacked />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-night-muted">
-            AI-native core banking, licensed to global banks, payment companies and
-            governments. Your brand. Your policy. Your books.
+            Licensed core banking for global banks, Tier 1 institutions and
+            central banks. Your brand. Your policy. Your books.
           </p>
         </div>
         <div className="md:col-span-3">
