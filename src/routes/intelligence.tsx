@@ -5,8 +5,17 @@ import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { agents } from "@/lib/site";
+import { pageMeta } from "@/lib/page-meta";
 
-export const Route = createFileRoute("/intelligence")({ component: IntelligencePage });
+export const Route = createFileRoute("/intelligence")({
+  head: () =>
+    pageMeta({
+      title: "Control plane",
+      description:
+        "Risk, routing, reconciliation and operations agents under your institutional mandate, with full replay.",
+    }),
+  component: IntelligencePage,
+});
 
 function IntelligencePage() {
   return (

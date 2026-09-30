@@ -8,10 +8,18 @@ import { CompareTable } from "@/components/compare-table";
 import { ExamFaq } from "@/components/exam-faq";
 import { LedgerField } from "@/components/ledger-field";
 import { RailMesh } from "@/components/rail-mesh";
+import { pageMeta } from "@/lib/page-meta";
 import { institutions, leadership, onRamps, offRamps, outcomes, site, stats } from "@/lib/site";
 
-
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () =>
+    pageMeta({
+      title: "Cush Core · Licensed core banking for global banks, Tier 1 and central banks",
+      description:
+        "A licensed system of record for global banks, Tier 1 institutions and central banks. Your brand. Your mandate. Your books.",
+    }),
+  component: Home,
+});
 
 function Home() {
   return (
@@ -189,8 +197,8 @@ function Home() {
             Adoption paths that respect franchise risk.
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-            Coexist to prove the ledger. Replatform a line of business. Or licence a
-            greenfield entity. The system of record does not change.
+            Sidecar coexistence to prove the ledger. Replatform a line of business.
+            Or licence a greenfield entity. The system of record does not change.
           </p>
           <div className="mt-10">
             <AdoptionPaths />

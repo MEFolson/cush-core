@@ -5,7 +5,7 @@ export function AdoptionPaths({ tone = "paper" }: { tone?: "paper" | "night" }) 
   return (
     <ul className="grid gap-px bg-line sm:grid-cols-3">
       {adoptionPaths.map((path) => (
-        <li key={path.id} className={night ? "bg-night px-6 py-8" : "bg-paper px-6 py-8"}>
+        <li id={path.id} key={path.id} className={night ? "scroll-mt-20 bg-night px-6 py-8" : "scroll-mt-20 bg-paper px-6 py-8"}>
           <p className="font-mono text-xs tracking-[0.16em] text-signal">
             {path.index} / {path.name}
           </p>

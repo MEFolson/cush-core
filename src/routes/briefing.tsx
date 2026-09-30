@@ -3,8 +3,17 @@ import { BriefingForm } from "@/components/briefing-form";
 import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
 import { site } from "@/lib/site";
+import { pageMeta } from "@/lib/page-meta";
 
-export const Route = createFileRoute("/briefing")({ component: BriefingPage });
+export const Route = createFileRoute("/briefing")({
+  head: () =>
+    pageMeta({
+      title: "Request a briefing",
+      description:
+        "Private walk-through of the Cush Core control plane for CIOs, correspondent banking and core modernisation.",
+    }),
+  component: BriefingPage,
+});
 
 function BriefingPage() {
   return (

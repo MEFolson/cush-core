@@ -271,8 +271,8 @@ export const institutions = [
     id: "digital",
     index: "03",
     name: "Digital banks & licensed PSPs",
-    title: "Institutional grade without a legacy core.",
-    body: "Governed product blueprints, multi-entity isolation and agentic compliance. Launch accounts, cards or payroll under your licence — without inheriting a thirty-year change estate.",
+    title: "Sidecar for digital brands. Hours to market on a regulator-readable ledger.",
+    body: "Sit beside the incumbent core when the house will not rip and replace. Governed product blueprints, multi-entity isolation and agentic compliance under your licence.",
   },
   {
     id: "sovereign",
@@ -340,6 +340,11 @@ export const leadership = [
     role: "Chief Technology Officer",
     line: "Twenty years in banking technology, digital architecture and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
   },
+  {
+    name: "Paul Singh",
+    role: "MLRO & Chief Compliance Officer",
+    line: "Registered MLRO. Former Bank of England / PRA supervisory background. Previously MLRO for Revolut Payments and Crypto. Clears material external claims and licensing conversations.",
+  },
 ] as const;
 
 export const stats = [
@@ -374,11 +379,11 @@ export const outcomes = [
 
 export const adoptionPaths = [
   {
-    id: "coexist",
+    id: "sidecar",
     index: "01",
-    name: "Coexist",
-    title: "Prove the ledger beside the incumbent core.",
-    body: "Stand up a digital book, a correspondent product or a new geography first. Evidence first. Leave the back book untouched until the institution decides otherwise.",
+    name: "Sidecar (coexist)",
+    title: "Sit beside the incumbent core.",
+    body: "For digital brands and banks that will not rip and replace. Stand up a digital book, a correspondent product or a new geography first. Evidence first. Leave the back book untouched until the institution decides otherwise.",
   },
   {
     id: "replatform",
@@ -429,7 +434,7 @@ export const comparison = {
 export const examinationFaqs = [
   {
     q: "Must we replace the incumbent core?",
-    a: "No. Coexistence is the default path. Run Cush Core beside the existing book for a product line, geography or correspondent flows. Replatform only when the evidence justifies it.",
+    a: "No. Sidecar coexistence is the default path. Run Cush Core beside the existing book for a product line, geography or correspondent flows. Replatform only when the evidence justifies it.",
   },
   {
     q: "Who holds the system of record?",

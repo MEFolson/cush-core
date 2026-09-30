@@ -2,10 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
-import { leadership, trustPoints } from "@/lib/site";
 import { ExamFaq } from "@/components/exam-faq";
+import { pageMeta } from "@/lib/page-meta";
+import { leadership, trustPoints } from "@/lib/site";
 
-export const Route = createFileRoute("/trust")({ component: TrustPage });
+export const Route = createFileRoute("/trust")({
+  head: () =>
+    pageMeta({
+      title: "Governance",
+      description:
+        "Immutable BLAKE3 ledger, agents under mandate, and principals with regulated lineage. Built to be examined.",
+    }),
+  component: TrustPage,
+});
 
 function TrustPage() {
   return (
@@ -90,7 +99,7 @@ function TrustPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="font-mono text-xs tracking-[0.16em] text-muted">Principals</p>
-          <div className="mt-8 grid gap-10 lg:grid-cols-2">
+          <div className="mt-8 grid gap-10 lg:grid-cols-3">
             {leadership.map((person) => (
               <article key={person.name} className="border-t border-line pt-6">
                 <h3 className="font-display text-2xl tracking-[-0.02em]">{person.name}</h3>

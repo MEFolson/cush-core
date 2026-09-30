@@ -83,13 +83,14 @@ export function BriefingForm() {
   if (receipt) {
     return (
       <div className="border border-line bg-paper px-6 py-10 sm:px-10">
-        <p className="font-mono text-xs tracking-[0.16em] text-signal">Received</p>
+        <p className="font-mono text-xs tracking-[0.16em] text-signal">Email draft</p>
         <h3 className="mt-3 font-display text-3xl font-medium tracking-[-0.03em]">
-          Your briefing is lodged.
+          Send the email to complete your request.
         </h3>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
-          A principal will reply. If your mail client opened, send the message to complete
-          the request. Keep the reference for your file.
+          Nothing is stored on our servers yet. Your details stay in this browser and
+          in the mail draft that should have opened. Send that message to {site.email}
+          so a principal can reply. Keep the reference for your file.
         </p>
         <dl className="mt-8 grid gap-4 sm:grid-cols-2">
           <div className="border-t border-line pt-3">
@@ -110,7 +111,7 @@ export function BriefingForm() {
             setFields(empty);
           }}
         >
-          Lodge another
+          Prepare another request
         </Button>
       </div>
     );
@@ -188,9 +189,9 @@ export function BriefingForm() {
       ) : null}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">
-          Private. Replies from {site.email}. Not a public waitlist.
+          Opens your mail client with a draft to {site.email}. Private. Not a public waitlist.
         </p>
-        <Button type="submit">Lodge the briefing</Button>
+        <Button type="submit">Open email draft</Button>
       </div>
     </form>
   );

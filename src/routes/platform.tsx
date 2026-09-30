@@ -7,8 +7,17 @@ import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/site";
 import { AdoptionPaths } from "@/components/adoption-paths";
+import { pageMeta } from "@/lib/page-meta";
 
-export const Route = createFileRoute("/platform")({ component: PlatformPage });
+export const Route = createFileRoute("/platform")({
+  head: () =>
+    pageMeta({
+      title: "Architecture",
+      description:
+        "Four layers under one examination: product catalogue, orchestration, immutable ledger and multi-rail connectivity.",
+    }),
+  component: PlatformPage,
+});
 
 function PlatformPage() {
   return (
@@ -56,7 +65,7 @@ function PlatformPage() {
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="font-mono text-xs tracking-[0.16em] text-muted">Adoption</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-            Coexist. Replatform. Greenfield.
+            Sidecar. Replatform. Greenfield.
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
             The same licensed core. Three ways in — so the board does not have to
