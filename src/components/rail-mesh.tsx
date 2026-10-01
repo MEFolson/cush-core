@@ -154,7 +154,7 @@ export function RailMesh() {
   const inbound = selected.dir === "on";
 
   return (
-    <div className="border border-night-line bg-night text-night-fg">
+    <div className="border-2 border-line bg-paper text-ink">
       <div className="grid gap-0 lg:grid-cols-12">
         <div ref={wrapRef} className={cn("relative h-[340px] sm:h-[420px] lg:col-span-8")}>
           <canvas
@@ -163,16 +163,16 @@ export function RailMesh() {
             aria-label="On-ramp and off-ramp connectivity"
           />
         </div>
-        <div className="border-t border-night-line px-6 py-8 lg:col-span-4 lg:border-l lg:border-t-0">
+        <div className="border-t border-line px-6 py-8 lg:col-span-4 lg:border-l lg:border-t-0">
           <p className="font-mono text-xs tracking-[0.16em] text-signal">
             {inbound ? "On-ramp" : "Off-ramp"} · {selected.code}
           </p>
           <h3 className="mt-2 text-2xl tracking-[-0.02em]">{selected.name}</h3>
-          <p className="mt-1 text-sm text-night-muted">
+          <p className="mt-1 text-sm text-muted">
             {selected.kind} · {selected.region}
           </p>
-          <p className="mt-5 text-sm leading-relaxed text-night-muted">{selected.blurb}</p>
-          <p className="mt-5 text-xs leading-relaxed text-night-muted">
+          <p className="mt-5 text-sm leading-relaxed text-muted">{selected.blurb}</p>
+          <p className="mt-5 text-xs leading-relaxed text-muted">
             Click a rail. Inbound credits post before they are available. Outbound
             leaves only after the ledger and the agent trace.
           </p>

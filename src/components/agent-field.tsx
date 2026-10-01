@@ -79,7 +79,7 @@ export function AgentField({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div ref={wrapRef} className={cn("relative overflow-hidden bg-night", className)}>
+    <div ref={wrapRef} className={cn("relative overflow-hidden bg-paper", className)}>
       <canvas ref={canvasRef} className="absolute inset-0 size-full" aria-hidden="true" />
     </div>
   );

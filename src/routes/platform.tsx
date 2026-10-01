@@ -7,8 +7,17 @@ import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/site";
 import { AdoptionPaths } from "@/components/adoption-paths";
+import { pageMeta } from "@/lib/page-meta";
 
-export const Route = createFileRoute("/platform")({ component: PlatformPage });
+export const Route = createFileRoute("/platform")({
+  head: () =>
+    pageMeta({
+      title: "Architecture",
+      description:
+        "Four layers under one examination: product catalogue, orchestration, immutable ledger and multi-rail connectivity.",
+    }),
+  component: PlatformPage,
+});
 
 function PlatformPage() {
   return (
@@ -56,7 +65,7 @@ function PlatformPage() {
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="font-mono text-xs tracking-[0.16em] text-muted">Adoption</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-            Coexist. Replatform. Greenfield.
+            Sidecar. Replatform. Greenfield.
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
             The same licensed core. Three ways in — so the board does not have to
@@ -68,13 +77,13 @@ function PlatformPage() {
         </div>
       </section>
 
-      <section className="bg-night">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="font-mono text-xs tracking-[0.16em] text-signal">Connectivity</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-night-fg sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-ink sm:text-4xl">
             On-ramp in. Off-ramp out.
           </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-night-muted">
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
             FPS, SEPA, Fedwire, cards and SWIFT inbound. CHAPS, TARGET2, FAST, PIX
             and SWIFT outbound. Agents route; the ledger is the book.
           </p>
@@ -82,10 +91,10 @@ function PlatformPage() {
             <RailMesh />
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-night-muted">
+            <p className="text-sm text-muted">
               Simple per-customer price. Approximately one dollar a month, wherever you operate.
             </p>
-            <Button asChild variant="invert">
+            <Button asChild variant="primary">
               <Link to="/briefing">Discuss a licence</Link>
             </Button>
           </div>

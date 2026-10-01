@@ -113,14 +113,14 @@ export function BlueprintStudio() {
             : `${selected.length} product${selected.length === 1 ? "" : "s"} on this blueprint.`}
         </p>
       </div>
-      <div className="bg-night px-6 py-8 text-night-fg sm:px-8">
+      <div className="bg-paper-2 px-6 py-8 text-ink sm:px-8">
         <div className="flex items-center justify-between gap-4">
-          <p className="font-mono text-xs tracking-[0.16em] text-night-muted">
+          <p className="font-mono text-xs tracking-[0.16em] text-muted">
             blueprint.json
           </p>
           <CopyButton payload={JSON.stringify(blueprint, null, 2)} />
         </div>
-        <pre className="mt-5 overflow-x-auto font-mono text-xs leading-relaxed text-night-fg">
+        <pre className="mt-5 overflow-x-auto font-mono text-xs leading-relaxed text-ink">
           {JSON.stringify(blueprint, null, 2)}
         </pre>
       </div>
@@ -134,7 +134,7 @@ function CopyButton({ payload }: { payload: string }) {
     <Button
       type="button"
       size="sm"
-      variant="nightOutline"
+      variant="outline"
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(payload);

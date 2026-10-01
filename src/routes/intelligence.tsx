@@ -5,8 +5,17 @@ import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { agents } from "@/lib/site";
+import { pageMeta } from "@/lib/page-meta";
 
-export const Route = createFileRoute("/intelligence")({ component: IntelligencePage });
+export const Route = createFileRoute("/intelligence")({
+  head: () =>
+    pageMeta({
+      title: "Control plane",
+      description:
+        "Risk, routing, reconciliation and operations agents under your institutional mandate, with full replay.",
+    }),
+  component: IntelligencePage,
+});
 
 function IntelligencePage() {
   return (
@@ -18,7 +27,7 @@ function IntelligencePage() {
         lead="Cush Core is AI-native. Risk, routing, reconciliation and first-line operations run as agents inside policy you write. Nothing material happens that cannot be replayed."
       />
 
-      <section className="relative overflow-hidden border-b border-line bg-night text-night-fg">
+      <section className="relative overflow-hidden border-b border-line bg-paper text-ink">
         <AgentField className="h-[280px] sm:h-[340px]" />
         <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
           <p className="max-w-2xl text-2xl font-medium tracking-[-0.02em] sm:text-3xl">

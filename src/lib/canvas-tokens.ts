@@ -9,13 +9,13 @@ export type CanvasTokens = {
 };
 
 const fallback: CanvasTokens = {
-  night: "#031337",
-  night2: "#0a2254",
-  nightFg: "#f4f6fb",
-  nightMuted: "#8b9bb8",
-  nightLine: "#1a3260",
-  signal: "#165be6",
-  paper: "#f6f7fa",
+  night: "#f3eee6",
+  night2: "#e8e0d4",
+  nightFg: "#141210",
+  nightMuted: "#5a534c",
+  nightLine: "#cfc4b4",
+  signal: "#b8860b",
+  paper: "#f3eee6",
 };
 
 function read(el: Element, name: string, alt: string) {
@@ -24,12 +24,13 @@ function read(el: Element, name: string, alt: string) {
 }
 
 export function readCanvasTokens(el: Element): CanvasTokens {
+  // Light-surface mapping: canvases paint on paper with ink strokes.
   return {
-    night: read(el, "--color-night", fallback.night),
-    night2: read(el, "--color-night-2", fallback.night2),
-    nightFg: read(el, "--color-night-fg", fallback.nightFg),
-    nightMuted: read(el, "--color-night-muted", fallback.nightMuted),
-    nightLine: read(el, "--color-night-line", fallback.nightLine),
+    night: read(el, "--color-paper", fallback.night),
+    night2: read(el, "--color-paper-2", fallback.night2),
+    nightFg: read(el, "--color-ink", fallback.nightFg),
+    nightMuted: read(el, "--color-muted", fallback.nightMuted),
+    nightLine: read(el, "--color-line", fallback.nightLine),
     signal: read(el, "--color-signal", fallback.signal),
     paper: read(el, "--color-paper", fallback.paper),
   };

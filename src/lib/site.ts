@@ -1,7 +1,8 @@
 export const site = {
   name: "Cush Core",
   house: "Cush Core",
-  tagline: "The core a global bank can examine.",
+  tagline: "Core banking built to withstand examination.",
+  dek: "A licensed system of record for global banks, Tier 1 institutions and central banks. Your brand. Your mandate. Your books.",
   email: "mfolson@cushpayments.com",
   phone: "+44 7802 467665",
   city: "London",
@@ -9,10 +10,10 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "/platform", label: "Platform" },
-  { href: "/intelligence", label: "Intelligence" },
+  { href: "/platform", label: "Architecture" },
+  { href: "/intelligence", label: "Control plane" },
   { href: "/institutions", label: "Institutions" },
-  { href: "/trust", label: "Trust" },
+  { href: "/trust", label: "Governance" },
 ] as const;
 
 export const layers = [
@@ -20,8 +21,8 @@ export const layers = [
     id: "catalogue",
     index: "01",
     name: "Product catalogue",
-    title: "Issue in your name.",
-    body: "Accounts, cards, lending, payments and payroll — configured as JSON blueprints, live in hours, not a twelve-month programme. The customer sees your brand. The books sit on your ledger.",
+    title: "Products under your licence.",
+    body: "Accounts, cards, lending, payments and payroll — configured as governed blueprints and issued in your name. Customers see your brand. Supervisors see your books.",
     points: [
       "Current accounts, savings, cards, credit and SME lending",
       "Cross-border payments and payroll as first-class products",
@@ -33,8 +34,8 @@ export const layers = [
     id: "orchestration",
     index: "02",
     name: "Orchestration",
-    title: "Agents, under your mandate.",
-    body: "Cush Core is AI-native. Agents score risk in flight, select the cheapest viable rail, reconcile exceptions, and handle first-line operations. Policy stays with you. Every decision can be replayed.",
+    title: "Intelligence under institutional mandate.",
+    body: "Risk, routing, reconciliation and first-line operations run as agents inside policy you authorise. Nothing material moves without an explainable, replayable trace.",
     points: [
       "Multi-rail routing against cost and success rate",
       "In-flight risk scoring and AML orchestration",
@@ -46,8 +47,8 @@ export const layers = [
     id: "ledger",
     index: "03",
     name: "Immutable ledger",
-    title: "The system of record.",
-    body: "A BLAKE3-hashed ledger is the book, not a log beside the book. Permanent payment record. Multi-entity books across companies, countries and currencies. Built to be examined.",
+    title: "The book is the evidence.",
+    body: "A cryptographically verifiable ledger is the system of record — not a log beside it. Multi-entity, multi-currency books designed for examination, not reconstruction after the fact.",
     points: [
       "Cryptographically verifiable history",
       "Multi-entity, multi-currency books",
@@ -59,8 +60,8 @@ export const layers = [
     id: "rails",
     index: "04",
     name: "Multi-rail connectivity",
-    title: "Every scheme. One book.",
-    body: "Clearing, RTGS and instant payments on the same ledger. Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, PIX — routed under your policy, not a second vendor estate.",
+    title: "Clearing and settlement on one control plane.",
+    body: "Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2 and local instant schemes post to the same ledger they settle from — under your routing, risk and dual-control rules.",
     points: [
       "Faster Payments, SEPA, Fedwire / ACH, SWIFT",
       "CHAPS, TARGET2 and local RTGS",
@@ -236,8 +237,8 @@ export const products = [
   },
   {
     id: "payments",
-    name: "Payments",
-    line: "Clearing, RTGS, instant schemes and correspondent books as products you offer — on the same ledger as the account.",
+    name: "Payments & remittance",
+    line: "Clearing, RTGS, instant schemes, correspondent books and remittance as products you offer — on the same ledger as the account.",
   },
   {
     id: "kyc",
@@ -255,30 +256,30 @@ export const institutions = [
   {
     id: "global",
     index: "01",
-    name: "Global banks",
-    title: "Replace the core without a twelve-month programme.",
-    body: "Most institutions still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensed system: your brand, your policy, your books — from the account to the rail.",
+    name: "Global & Tier 1 banks",
+    title: "Modernise the core without betting the franchise.",
+    body: "Most houses still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensed system of record — brand, mandate and books — from account to rail.",
   },
   {
     id: "correspondent",
     index: "02",
     name: "Correspondent & treasury",
-    title: "Sell settlement as a product, not a project.",
-    body: "Clearing, RTGS and instant schemes in one control plane. Routing, risk and reconciliation sit where your treasurer already has to explain them.",
+    title: "Settlement as a governed product.",
+    body: "Clearing, RTGS and instant schemes in one control plane. Routing, risk and reconciliation sit where your treasurer and supervisors already expect an explanation.",
   },
   {
     id: "digital",
     index: "03",
-    name: "Digital banks & PSPs",
-    title: "Hours-to-market products on a regulator-readable ledger.",
-    body: "JSON product blueprints, multi-tenant isolation, agentic compliance. Launch accounts, cards or payroll under your licence without inheriting a 1980s core.",
+    name: "Digital banks & licensed PSPs",
+    title: "Sidecar for digital brands. Hours to market on a regulator-readable ledger.",
+    body: "Sit beside the incumbent core when the house will not rip and replace. Governed product blueprints, multi-entity isolation and agentic compliance under your licence.",
   },
   {
     id: "sovereign",
     index: "04",
-    name: "Governments & development banks",
+    name: "Central banks & development banks",
     title: "National-scale rails with an examination trail.",
-    body: "The capacity crunch is licensed cores and compliance officers, not another SaaS overlay. Agentic AI on an immutable ledger is how that expertise scales without a new IT estate.",
+    body: "Capacity is scarce in licensed cores and supervisory expertise — not in another SaaS overlay. Agents on an immutable ledger scale that expertise without a second IT estate.",
   },
 ] as const;
 
@@ -315,16 +316,16 @@ export const trustPoints = [
     body: "Every posting is hashed into an immutable BLAKE3 ledger. The book is the evidence.",
   },
   {
-    title: "AI that follows your rules",
-    body: "Agents operate inside a policy you write. Decisions are explainable and replayable for audit and supervisors.",
+    title: "Intelligence inside mandate",
+    body: "Agents operate only inside policy you authorise. Decisions are explainable and replayable for audit and supervisors.",
   },
   {
     title: "Books across companies",
     body: "Multi-entity isolation across the UK, Singapore, the United States and holding structures — one control plane.",
   },
   {
-    title: "Ready for a sandbox",
-    body: "Architecture prepared for PRA, MAS and other sandbox programmes, and for licences in more than one country.",
+    title: "Supervisory readiness",
+    body: "Architecture prepared for PRA, MAS and peer sandbox programmes — and for multi-jurisdiction licensing.",
   },
 ] as const;
 
@@ -339,59 +340,64 @@ export const leadership = [
     role: "Chief Technology Officer",
     line: "Twenty years in banking technology, digital architecture and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
   },
+  {
+    name: "Paul Singh",
+    role: "MLRO & Chief Compliance Officer",
+    line: "Registered MLRO. Former Bank of England / PRA supervisory background. Previously MLRO for Revolut Payments and Crypto. Clears material external claims and licensing conversations.",
+  },
 ] as const;
 
 export const stats = [
-  { value: "~$1", label: "Per customer / month" },
-  { value: "Hours", label: "Product blueprints to live" },
-  { value: "75+", label: "Years combined in regulated payments" },
+  { value: "One", label: "Licensed system of record" },
+  { value: "Four", label: "Layers under one examination" },
+  { value: "75+", label: "Years in regulated payments" },
   { value: "CHAPS", label: "Direct membership lineage" },
 ] as const;
 
 export const outcomes = [
   {
     index: "01",
-    title: "Hours, not a programme.",
-    body: "JSON product blueprints go live under your brand. No twelve-month change board for a current account.",
+    title: "Time-to-market without a change programme.",
+    body: "Governed product blueprints issue under your brand. A current account need not wait on a twelve-month board cycle.",
   },
   {
     index: "02",
-    title: "Agents, under mandate.",
-    body: "Risk, routing, recon and first-line ops run as agents. Policy stays with you. Every decision can be replayed.",
+    title: "Operational intelligence you can defend.",
+    body: "Risk, routing, reconciliation and first-line operations run as agents inside your mandate — with full replay for audit and supervisors.",
   },
   {
     index: "03",
-    title: "On-ramp and off-ramp.",
-    body: "Clearing, RTGS, cards and correspondent rails post to the same ledger they pay from.",
+    title: "Clearing and settlement without a second estate.",
+    body: "Inbound and outbound rails post to the same ledger as the account. No payments hub reconciling after the fact.",
   },
   {
     index: "04",
-    title: "One examination.",
-    body: "Product, orchestration, ledger and rails in a single walk-through — for a supervisor, a correspondent, a board.",
+    title: "One walk-through for the board and the supervisor.",
+    body: "Product, orchestration, ledger and rails in a single examination — for internal audit, correspondents and the regulatory desk.",
   },
 ] as const;
 
 export const adoptionPaths = [
   {
-    id: "coexist",
+    id: "sidecar",
     index: "01",
-    name: "Coexist",
+    name: "Sidecar (coexist)",
     title: "Sit beside the incumbent core.",
-    body: "Stand up a digital book, a correspondent product or a new geography first. Prove the ledger. Leave the back book where it is until you choose otherwise.",
+    body: "For digital brands and banks that will not rip and replace. Stand up a digital book, a correspondent product or a new geography first. Evidence first. Leave the back book untouched until the institution decides otherwise.",
   },
   {
     id: "replatform",
     index: "02",
     name: "Replatform",
-    title: "Move a book without a freeze.",
-    body: "Migrate a line of business onto Cush Core while the rest of the house continues. Dual-running, then cut. No big-bang weekend.",
+    title: "Migrate a line of business without a franchise freeze.",
+    body: "Move one book onto Cush Core while the rest of the house continues. Dual-run, then cut. No weekend cutover of the entire estate.",
   },
   {
     id: "greenfield",
     index: "03",
     name: "Greenfield",
-    title: "Licence a new house on day one.",
-    body: "A subsidiary, a digital bank, a payments entity — accounts, cards, lending and rails under your name from the first posting.",
+    title: "Licence a new entity from the first posting.",
+    body: "A subsidiary, digital bank or payments entity — accounts, cards, lending and rails under your name from day one.",
   },
 ] as const;
 
@@ -399,56 +405,56 @@ export const comparison = {
   columns: ["Stitched estate", "Multi-tenant SaaS", "Cush Core"] as const,
   rows: [
     {
-      label: "Whose brand",
-      cells: ["Vendor journeys, your logo last", "Their product, white-labelled", "Yours. Licensed."],
+      label: "Licence & brand",
+      cells: ["Vendor journeys, logo last", "Their product, white-labelled", "Your licence. Your brand."],
     },
     {
-      label: "The books",
-      cells: ["Core + hub + cards, recon after", "Their ledger, your extract", "BLAKE3 ledger you hold"],
+      label: "System of record",
+      cells: ["Core + hub + cards, recon later", "Their ledger, your extract", "Immutable ledger you hold"],
     },
     {
-      label: "AI",
+      label: "Intelligence",
       cells: ["Chat overlay on batch", "Generic models on their data", "Agents inside your mandate"],
     },
     {
-      label: "Rails",
-      cells: ["A second payments hub", "Their corridors, their hours", "On-ramp and off-ramp on the book"],
+      label: "Clearing & settlement",
+      cells: ["A second payments hub", "Their corridors, their hours", "Rails on the same book"],
     },
     {
-      label: "Examination",
+      label: "Supervisory examination",
       cells: ["Months of reconstruction", "Their auditors, your wait", "Replay the same afternoon"],
     },
     {
-      label: "Change",
-      cells: ["A programme per product", "Their backlog", "A blueprint. Hours."],
+      label: "Change control",
+      cells: ["A programme per product", "Their backlog", "Governed blueprints"],
     },
   ],
 } as const;
 
 export const examinationFaqs = [
   {
-    q: "Do we have to rip out the incumbent core?",
-    a: "No. Coexistence is the default. Run Cush Core beside the existing book for a product line, a geography or correspondent flows. Replatform when the evidence is in.",
+    q: "Must we replace the incumbent core?",
+    a: "No. Sidecar coexistence is the default path. Run Cush Core beside the existing book for a product line, geography or correspondent flows. Replatform only when the evidence justifies it.",
   },
   {
-    q: "Whose ledger is it?",
-    a: "Yours. Production posts to an immutable BLAKE3 ledger under the institution’s licence. We are not a multi-tenant SaaS sitting between you and the book.",
+    q: "Who holds the system of record?",
+    a: "The institution. Production posts to an immutable ledger under your licence. We are not a multi-tenant SaaS interposed between you and the books.",
   },
   {
-    q: "How do agents stay inside policy?",
-    a: "You write the mandate. Agents score, route, reconcile and advise inside those rules. Nothing material happens that cannot be replayed for internal audit or a supervisor.",
+    q: "How do agents remain inside mandate?",
+    a: "You authorise the policy. Agents score, route, reconcile and escalate inside those rules. Nothing material occurs that cannot be replayed for internal audit or a supervisor.",
   },
   {
-    q: "Which rails on day one?",
-    a: "On-ramp: Faster Payments, SEPA, Fedwire / ACH, card acquiring, SWIFT inbound. Off-ramp: CHAPS, TARGET2, SWIFT outbound, FAST, PIX. Routing is under cost, success rate and policy — not a static waterfall.",
+    q: "Which rails are in scope?",
+    a: "Inbound: Faster Payments, SEPA, Fedwire / ACH, card acquiring, SWIFT. Outbound: CHAPS, TARGET2, SWIFT, local instant schemes. Routing is governed by cost, success rate and mandate.",
   },
   {
-    q: "Can a supervisor replay a payment?",
-    a: "Yes. Posting, risk score, rail choice and scheme acknowledgement are a single trace. That is the point of an examinable core.",
+    q: "Can a supervisor replay a payment end to end?",
+    a: "Yes. Posting, risk score, rail selection and scheme acknowledgement form a single trace. That is the purpose of an examinable core.",
   },
   {
-    q: "How are we charged?",
-    a: "Simple per-customer price. Approximately one dollar a month, wherever you operate. No stack of vendor licences for ledger, hub, cards and overlay.",
+    q: "How is the platform commercialised?",
+    a: "Licensed economics on a per-customer basis — approximately one dollar per month — instead of a stack of vendor licences for ledger, hub, cards and overlay. Exact terms are set in the briefing.",
   },
 ] as const;
 
@@ -458,7 +464,7 @@ export const blueprintCatalog = [
   { id: "debit", name: "Debit cards" },
   { id: "credit", name: "Credit cards" },
   { id: "sme", name: "SME lending" },
-  { id: "pay", name: "Payments" },
+  { id: "pay", name: "Payments & remittance" },
   { id: "payroll", name: "Payroll" },
   { id: "embed", name: "Embedded APIs" },
 ] as const;
@@ -466,11 +472,13 @@ export const blueprintCatalog = [
 export const roles = [
   "Chief Information Officer",
   "Chief Operating Officer",
+  "Chief Risk Officer",
   "Head of Correspondent Banking",
   "Head of International",
   "Treasury / Markets",
   "Core modernisation",
-  "Payments product",
+  "Payments & settlement",
   "Risk & compliance",
+  "Central bank / supervisory",
   "Other",
 ] as const;

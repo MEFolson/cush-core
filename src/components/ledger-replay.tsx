@@ -91,7 +91,7 @@ export function LedgerReplay() {
           </Button>
           <Button
             type="button"
-            variant="night"
+            variant="primary"
             size="sm"
             disabled={cursor === STEPS.length - 1}
             onClick={() => setCursor((c) => Math.min(STEPS.length - 1, c + 1))}
