@@ -61,12 +61,12 @@ export function SiteFooter() {
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">London</p>
           <ul className="mt-3 text-sm">
             <li>
-              <a
+              <Link
+                to="/briefing"
                 className="inline-flex min-h-11 items-center underline decoration-signal underline-offset-4"
-                href={`mailto:${site.email}`}
               >
-                {site.email}
-              </a>
+                Contact
+              </Link>
             </li>
             <li>
               <a

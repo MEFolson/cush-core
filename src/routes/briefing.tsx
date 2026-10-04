@@ -49,8 +49,8 @@ function BriefingPage() {
           <div className="px-5 py-12 sm:px-8 lg:col-span-8 lg:border-r lg:border-line lg:pr-12">
             <h2 className="font-display text-2xl font-normal">Request</h2>
             <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-muted">
-              The form opens a mail draft to the house. Nothing is stored on a server
-              from this page.
+              The form is the contact. It is addressed to the house. Nothing is stored
+              on a server from this page.
             </p>
             <div className="mt-8">
               <BriefingForm />
@@ -59,14 +59,6 @@ function BriefingPage() {
           <aside className="border-t border-line px-5 py-12 sm:px-8 lg:col-span-4 lg:border-t-0 lg:py-12">
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">House</p>
             <dl className="mt-6 divide-y divide-line border-y border-line text-sm">
-              <div className="py-4">
-                <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">Email</dt>
-                <dd className="mt-2">
-                  <a className="underline decoration-signal underline-offset-4" href={`mailto:${site.email}`}>
-                    {site.email}
-                  </a>
-                </dd>
-              </div>
               <div className="py-4">
                 <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">Telephone</dt>
                 <dd className="mt-2">

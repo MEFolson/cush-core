@@ -3,7 +3,7 @@ export const site = {
   house: "Cush Core",
   tagline: "The books, under one examination.",
   dek: "A licensed system of record for global banks, Tier 1 institutions, and central banks. Product, orchestration, an immutable ledger, and multi-rail clearing sit under one control plane. The institution keeps its brand, its mandate, and its books.",
-  email: "mfolson@cushpayments.com",
+  email: "matthew@cush-core.com",
   phone: "+44 7802 467665",
   city: "London",
   address: "London",
