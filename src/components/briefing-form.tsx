@@ -65,7 +65,7 @@ export function BriefingForm() {
         `Institution: ${fields.institution}`,
         `Role: ${fields.role}`,
         `Email: ${fields.email}`,
-        `Markets: ${fields.corridor || "—"}`,
+        `Markets: ${fields.corridor || "(not stated)"}`,
         "",
         fields.brief || "A private walk-through of the control plane.",
       ].join("\n"),
@@ -82,9 +82,10 @@ export function BriefingForm() {
 
   if (receipt) {
     return (
-      <div className="border border-line bg-paper px-6 py-10 sm:px-10">
-        <p className="font-mono text-xs tracking-[0.16em] text-signal">Email draft</p>
-        <h3 className="mt-3 font-display text-3xl font-medium tracking-[-0.03em]">
+      <div className="border-y border-line bg-paper px-0 py-10 sm:px-2">
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Email draft</p>
+        <div className="mt-4 h-px w-10 bg-signal" aria-hidden="true" />
+        <h3 className="mt-4 font-display text-3xl font-normal">
           Send the email to complete your request.
         </h3>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
@@ -118,7 +119,7 @@ export function BriefingForm() {
   }
 
   return (
-    <form onSubmit={submit} className="border border-line bg-paper px-6 py-8 sm:px-10">
+    <form onSubmit={submit} className="border-y border-line bg-paper px-0 py-8 sm:px-2">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" htmlFor="name">
           <Input
@@ -142,7 +143,7 @@ export function BriefingForm() {
             id="role"
             value={fields.role}
             onChange={(e) => update("role", e.target.value)}
-            className="flex h-11 w-full rounded-md border border-line bg-paper px-3.5 text-sm text-ink focus-visible:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+            className="flex h-11 w-full border border-line bg-paper px-3.5 text-sm text-ink focus-visible:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
           >
             {roles.map((role) => (
               <option key={role} value={role}>
@@ -165,7 +166,7 @@ export function BriefingForm() {
           <Field label="Markets of interest" htmlFor="corridor">
             <Input
               id="corridor"
-              placeholder="UK–SEPA, USD correspondent, Singapore FAST…"
+              placeholder="UK, SEPA, USD correspondent, Singapore FAST"
               value={fields.corridor}
               onChange={(e) => update("corridor", e.target.value)}
             />
@@ -175,7 +176,7 @@ export function BriefingForm() {
           <Field label="What you wish to examine" htmlFor="brief">
             <Textarea
               id="brief"
-              placeholder="Core replacement, multi-entity books, correspondent product, sandbox…"
+              placeholder="Core replacement, multi-entity books, correspondent product, sandbox"
               value={fields.brief}
               onChange={(e) => update("brief", e.target.value)}
             />

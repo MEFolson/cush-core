@@ -15,7 +15,7 @@ const STEPS = [
     label: "Policy",
     title: "Mandate evaluated",
     detail:
-      "Current-account inbound — permitted. Dual-control threshold not met. Velocity within standing mandate.",
+      "Current-account inbound, permitted. Dual-control threshold not met. Velocity within standing mandate.",
   },
   {
     id: "risk",
@@ -36,7 +36,7 @@ const STEPS = [
     label: "Ledger",
     title: "Posted · BLAKE3 chain extended",
     detail:
-      "Debit Faster Payments settlement, credit current account. The book is the evidence — not a log beside the book.",
+      "Debit Faster Payments settlement, credit current account. The book is the evidence, not a log beside the book.",
   },
   {
     id: "out",
@@ -117,9 +117,10 @@ export function LedgerReplay() {
                 >
                   <span
                     className={cn(
-                      "size-2 shrink-0 rounded-full",
-                      on ? "bg-signal" : done ? "bg-ink" : "bg-line",
+                      "w-4 shrink-0 border-t",
+                      on ? "border-signal" : done ? "border-ink" : "border-line",
                     )}
+                    aria-hidden="true"
                   />
                   <span>{item.label}</span>
                 </button>

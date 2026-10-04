@@ -5,12 +5,19 @@ import { SiteShell } from "@/components/site-shell";
 import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/page-meta";
 
+const cover = [
+  { index: "01", line: "The four-layer stack against your mandate." },
+  { index: "02", line: "Product blueprints for the licences you already hold." },
+  { index: "03", line: "A replayed instruction from Faster Payments to the last mile." },
+  { index: "04", line: "Books, isolation, and what a sandbox will ask to see." },
+];
+
 export const Route = createFileRoute("/briefing")({
   head: () =>
     pageMeta({
       title: "Request a briefing",
       description:
-        "Private walk-through of the Cush Core control plane for CIOs, correspondent banking and core modernisation.",
+        "Private walk-through of the Cush Core control plane for CIOs, correspondent banking, and core modernisation.",
     }),
   component: BriefingPage,
 });
@@ -22,48 +29,61 @@ function BriefingPage() {
         folio="06"
         kicker="Briefing"
         title="A private walk-through of the control plane."
-        lead="For CIOs, heads of correspondent banking, international and core modernisation. Not a waitlist. A principal replies."
+        lead="For CIOs, heads of correspondent banking, international, and core modernisation. Not a waitlist. A principal replies."
       />
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12">
-          <aside className="lg:col-span-4">
-            <p className="font-mono text-xs tracking-[0.16em] text-muted">House</p>
-            <h2 className="mt-3 font-display text-2xl tracking-[-0.02em]">
-              What we will cover.
-            </h2>
-            <ul className="mt-6 space-y-4 text-sm leading-relaxed text-muted">
-              <li>The four-layer stack against your mandate.</li>
-              <li>Product blueprints for the licences you already hold.</li>
-              <li>A replayed instruction from Faster Payments to last mile.</li>
-              <li>Books, isolation and what a sandbox will ask to see.</li>
-            </ul>
-            <dl className="mt-10 space-y-4 border-t border-line pt-6 text-sm">
-              <div>
-                <dt className="font-mono text-xs tracking-[0.14em] text-muted">Email</dt>
-                <dd className="mt-1">
-                  <a className="hover:opacity-70" href={`mailto:${site.email}`}>
+        <ol className="mx-auto grid max-w-6xl border-b border-line sm:grid-cols-2 lg:grid-cols-4">
+          {cover.map((item) => (
+            <li
+              key={item.index}
+              className="border-b border-line px-5 py-6 last:border-b-0 sm:px-8 sm:[&:nth-child(n+3)]:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
+            >
+              <p className="font-mono text-xs text-signal">{item.index}</p>
+              <p className="mt-3 max-w-[28ch] text-sm leading-relaxed">{item.line}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mx-auto grid max-w-6xl lg:grid-cols-12">
+          <div className="px-5 py-12 sm:px-8 lg:col-span-8 lg:border-r lg:border-line lg:pr-12">
+            <h2 className="font-display text-2xl font-normal">Request</h2>
+            <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-muted">
+              The form opens a mail draft to the house. Nothing is stored on a server
+              from this page.
+            </p>
+            <div className="mt-8">
+              <BriefingForm />
+            </div>
+          </div>
+          <aside className="border-t border-line px-5 py-12 sm:px-8 lg:col-span-4 lg:border-t-0 lg:py-12">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">House</p>
+            <dl className="mt-6 divide-y divide-line border-y border-line text-sm">
+              <div className="py-4">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">Email</dt>
+                <dd className="mt-2">
+                  <a className="underline decoration-signal underline-offset-4" href={`mailto:${site.email}`}>
                     {site.email}
                   </a>
                 </dd>
               </div>
-              <div>
-                <dt className="font-mono text-xs tracking-[0.14em] text-muted">Telephone</dt>
-                <dd className="mt-1">
-                  <a className="hover:opacity-70" href={`tel:${site.phone.replace(/\s/g, "")}`}>
+              <div className="py-4">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">Telephone</dt>
+                <dd className="mt-2">
+                  <a
+                    className="underline decoration-signal underline-offset-4"
+                    href={`tel:${site.phone.replace(/\s/g, "")}`}
+                  >
                     {site.phone}
                   </a>
                 </dd>
               </div>
-              <div>
-                <dt className="font-mono text-xs tracking-[0.14em] text-muted">Seat</dt>
-                <dd className="mt-1">{site.address}</dd>
+              <div className="py-4">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">City</dt>
+                <dd className="mt-2">{site.city}</dd>
               </div>
             </dl>
           </aside>
-          <div className="lg:col-span-8">
-            <BriefingForm />
-          </div>
         </div>
       </section>
     </SiteShell>

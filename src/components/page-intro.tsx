@@ -1,45 +1,28 @@
-import { cn } from "@/lib/utils";
-
 export function PageIntro({
   folio,
   kicker,
   title,
   lead,
-  invert = false,
 }: {
   folio: string;
   kicker: string;
   title: string;
   lead: string;
-  invert?: boolean;
 }) {
   return (
-    <header
-      className={cn(
-        "border-b",
-        invert ? "border-night-line bg-night text-night-fg" : "border-line bg-paper text-ink",
-      )}
-    >
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <p
-          className={cn(
-            "font-mono text-xs tracking-[0.18em]",
-            invert ? "text-night-muted" : "text-muted",
-          )}
-        >
-          {folio} / {kicker}
-        </p>
-        <h1 className="mt-5 max-w-3xl font-display text-4xl font-medium leading-[1.12] tracking-[-0.03em] sm:text-6xl">
-          {title}
-        </h1>
-        <p
-          className={cn(
-            "mt-6 max-w-2xl text-base leading-relaxed sm:text-lg",
-            invert ? "text-night-muted" : "text-muted",
-          )}
-        >
-          {lead}
-        </p>
+    <header className="border-b border-line bg-paper text-ink">
+      <div className="mx-auto grid max-w-6xl lg:grid-cols-12">
+        <div className="border-b border-line px-5 py-8 sm:px-8 lg:col-span-3 lg:border-b-0 lg:border-r lg:py-16">
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">{folio}</p>
+          <p className="mt-3 font-mono text-xs uppercase tracking-[0.14em] text-muted">{kicker}</p>
+          <div className="mt-6 h-px w-10 bg-signal" aria-hidden="true" />
+        </div>
+        <div className="px-5 py-12 sm:px-8 lg:col-span-9 lg:py-16 lg:pl-12">
+          <h1 className="max-w-[18ch] font-display text-4xl font-normal leading-[1.08] sm:text-5xl">
+            {title}
+          </h1>
+          <p className="mt-6 max-w-[65ch] text-base leading-relaxed text-muted sm:text-lg">{lead}</p>
+        </div>
       </div>
     </header>
   );

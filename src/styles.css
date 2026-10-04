@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-sans: "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-paper: #f3eee6;
-  --color-paper-2: #e8e0d4;
-  --color-ink: #141210;
-  --color-ink-soft: #2c2824;
-  --color-muted: #5a534c;
-  --color-line: #cfc4b4;
-  --color-signal: #b8860b;
-  --color-signal-fg: #f3eee6;
-  --color-night: #141210;
-  --color-night-2: #1f1c19;
-  --color-night-fg: #f3eee6;
-  --color-night-muted: #a39a8e;
-  --color-night-line: #3d3832;
+  --color-paper: #f4f1ea;
+  --color-paper-2: #ebe6dc;
+  --color-ink: #1c2430;
+  --color-ink-soft: #2c3848;
+  --color-muted: #5c6573;
+  --color-line: #e7e2d6;
+  --color-signal: #7a2e2e;
+  --color-signal-fg: #f4f1ea;
 
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  /* Ink band for the closing memorandum. Stone type on this ink, oxblood only as a rule. */
+  --color-night: #1c2430;
+  --color-night-2: #243044;
+  --color-night-fg: #f4f1ea;
+  --color-night-muted: #c8c2b6;
+  --color-night-line: #3c4656;
 
-  --shadow-border: 0 0 0 1px rgba(20, 23, 28, 0.08), 0 1px 2px -1px rgba(20, 23, 28, 0.06),
-    0 2px 4px 0 rgba(20, 23, 28, 0.04);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  --shadow-border: 0 0 0 1px rgba(28, 36, 48, 0.08);
 }
 
 @layer base {
@@ -39,6 +40,8 @@
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
   }
 
   button:not(:disabled),
@@ -52,12 +55,9 @@
   h4 {
     text-wrap: balance;
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-  }
-
-  h1 {
-    font-weight: 700;
+    font-weight: 450;
+    font-optical-sizing: auto;
+    letter-spacing: -0.018em;
   }
 
   p {
@@ -65,12 +65,12 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--color-signal) 28%, transparent);
-    color: var(--color-ink);
+    background: #7a2e2e;
+    color: #f4f1ea;
   }
 
   img:not(.mark) {
-    outline: 1px solid rgba(3, 19, 55, 0.08);
+    outline: 1px solid rgba(28, 36, 48, 0.12);
     outline-offset: -1px;
   }
 }

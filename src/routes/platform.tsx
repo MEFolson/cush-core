@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArchitectureExplorer } from "@/components/architecture-explorer";
 import { BlueprintStudio } from "@/components/blueprint-studio";
-import { RailMesh } from "@/components/rail-mesh";
+import { RailIndex } from "@/components/rail-index";
 import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/platform")({
     pageMeta({
       title: "Architecture",
       description:
-        "Four layers under one examination: product catalogue, orchestration, immutable ledger and multi-rail connectivity.",
+        "Four layers under one examination: product catalogue, orchestration, immutable ledger, and multi-rail connectivity.",
     }),
   component: PlatformPage,
 });
@@ -24,35 +24,41 @@ function PlatformPage() {
     <SiteShell>
       <PageIntro
         folio="02"
-        kicker="Platform"
-        title="One system, from the account to the rail."
-        lead="Many institutions still stitch a domestic core, a payments hub and a card processor. Cush Core is the book, the agents and the rails — licensed under your name."
+        kicker="Architecture"
+        title="From the account to the rail."
+        lead="Many institutions still stitch a domestic core, a payments hub, and a card processor. Cush Core is the book, the agents, and the rails, licensed under your name."
       />
 
       <section className="border-b border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <ArchitectureExplorer />
         </div>
       </section>
 
-      <section className="border-b border-line bg-paper-2">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <p className="font-mono text-xs tracking-[0.16em] text-muted">Catalogue</p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-            What the institution can offer.
-          </h2>
-          <ul className="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((item, i) => (
-              <li key={item.id} className="bg-paper px-6 py-8">
-                <p className="font-mono text-xs text-muted">
+      <section className="border-b border-line bg-paper">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
+          <div className="lg:col-span-4">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Catalogue</p>
+            <h2 className="mt-4 font-display text-3xl font-normal">What the institution can issue.</h2>
+          </div>
+          <p className="max-w-[65ch] text-sm leading-relaxed text-muted lg:col-span-8 lg:pt-10">
+            Each product is a governed blueprint on the same ledger. Customers see
+            the institution. The examination sees one book.
+          </p>
+        </div>
+        <ul className="mx-auto max-w-6xl border-t border-line">
+          {products.map((item, i) => (
+            <li key={item.id} className="border-b border-line">
+              <div className="grid gap-2 px-5 py-6 sm:px-8 lg:grid-cols-12 lg:gap-8">
+                <p className="font-mono text-xs text-signal lg:col-span-2">
                   {String(i + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-3 font-display text-2xl tracking-[-0.02em]">{item.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.line}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+                <h3 className="font-display text-2xl font-normal lg:col-span-4">{item.name}</h3>
+                <p className="max-w-[65ch] text-sm leading-relaxed text-muted lg:col-span-6">{item.line}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="border-b border-line bg-paper">
@@ -62,42 +68,43 @@ function PlatformPage() {
       </section>
 
       <section className="border-b border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <p className="font-mono text-xs tracking-[0.16em] text-muted">Adoption</p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
-            Sidecar. Replatform. Greenfield.
-          </h2>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-            The same licensed core. Three ways in — so the board does not have to
+        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Adoption</p>
+            <h2 className="mt-4 font-display text-3xl font-normal">Sidecar, replatform, or greenfield.</h2>
+          </div>
+          <p className="max-w-[65ch] text-sm leading-relaxed text-muted lg:col-span-7 lg:pt-10">
+            The same licensed core. Three ways in, so the board does not have to
             bet the house on a weekend.
           </p>
-          <div className="mt-10">
-            <AdoptionPaths />
-          </div>
+        </div>
+        <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
+          <AdoptionPaths />
         </div>
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <p className="font-mono text-xs tracking-[0.16em] text-signal">Connectivity</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-[-0.03em] text-ink sm:text-4xl">
-            On-ramp in. Off-ramp out.
-          </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
-            FPS, SEPA, Fedwire, cards and SWIFT inbound. CHAPS, TARGET2, FAST, PIX
-            and SWIFT outbound. Agents route; the ledger is the book.
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Connectivity</p>
+            <h2 className="mt-4 font-display text-3xl font-normal text-ink">On-ramp in. Off-ramp out.</h2>
+          </div>
+          <p className="max-w-[48ch] text-sm leading-relaxed text-muted lg:col-span-5">
+            Faster Payments, SEPA, Fedwire, cards, and SWIFT inbound. CHAPS, TARGET2,
+            FAST, PIX, and SWIFT outbound. Agents route. The ledger is the book.
           </p>
-          <div className="mt-10">
-            <RailMesh />
-          </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-muted">
-              Simple per-customer price. Approximately one dollar a month, wherever you operate.
-            </p>
-            <Button asChild variant="primary">
-              <Link to="/briefing">Discuss a licence</Link>
-            </Button>
-          </div>
+        </div>
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <RailIndex />
+        </div>
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p className="max-w-[48ch] text-sm leading-relaxed text-muted">
+            Commercial terms, including the per-customer model, are set in the briefing
+            and recorded under Governance.
+          </p>
+          <Button asChild>
+            <Link to="/briefing">Discuss a licence</Link>
+          </Button>
         </div>
       </section>
     </SiteShell>

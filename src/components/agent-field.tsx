@@ -67,7 +67,7 @@ export function AgentField({ className }: { className?: string }) {
         ctx.textAlign = "center";
         ctx.fillText(end ? (width < 520 ? name : name + "-RAMP") : String(i).padStart(2, "0"), x, y - 36);
         ctx.fillStyle = tok.nightFg;
-        ctx.font = "600 12px Outfit, sans-serif";
+        ctx.font = "500 12px 'Source Sans 3', sans-serif";
         ctx.fillText(end ? (i === 0 ? "Inbound" : "Outbound") : name, x, y + 48);
       });
       ctx.textAlign = "start";

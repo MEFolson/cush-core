@@ -17,7 +17,7 @@ export const Route = createRootRoute({
         content:
           "Cush Core is licensed core banking for global banks, Tier 1 institutions and central banks. Immutable ledger. Institutional mandate. Clearing and settlement on one system of record.",
       },
-      { name: "theme-color", content: "#031337" },
+      { name: "theme-color", content: "#f4f1ea" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Cush Core" },
       {
@@ -39,7 +39,7 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap",
       },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },

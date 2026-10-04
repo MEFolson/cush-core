@@ -1,10 +1,10 @@
 # Cush Core
 
-Licensed core banking for global banks, Tier 1 institutions and central banks.
+Licensed core banking for global banks, Tier 1 institutions, and central banks.
 
 One immutable ledger. Agents under the institution’s mandate. On-ramp and off-ramp on the same book.
 
-This repository is the institutional marketing site — distinct from [Cush Payments](https://cushpayments.com) ([/core](https://cushpayments.com/core) on the Payments site). Cush Payments runs on Cush Core.
+This repository is the institutional marketing site, distinct from [Cush Payments](https://cushpayments.com) ([/core](https://cushpayments.com/core) on the Payments site). Cush Payments runs on Cush Core.
 
 ## Stack
 
@@ -46,6 +46,6 @@ When ready (Matthew GO):
 
 ## Principals
 
-Matthew Ekow Folson · Founder & Chief Executive  
-Jose Luis Caldeira · Chief Technology Officer  
-Paul Singh · MLRO & Chief Compliance Officer
+Matthew Ekow Folson, Founder and Group CEO (sole founder)  
+Jose Luis Caldeira, Chief Technology Officer (part-time since October 2025, not a founder)  
+Paul Singh, MLRO and Chief Compliance Officer
