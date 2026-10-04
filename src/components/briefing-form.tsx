@@ -90,7 +90,7 @@ export function BriefingForm() {
         </h3>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
           Nothing is stored on our servers yet. Your details stay in this browser and
-          in the message that should have opened, addressed to {site.email}. Send it
+          in the message that should have opened, addressed to {site.email} Send it
           so a principal can reply. Keep the reference for your file.
         </p>
         <dl className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -190,7 +190,7 @@ export function BriefingForm() {
       ) : null}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">
-          Sends to {site.email}. Private. Not a public waitlist.
+          Sends to {site.email} Private. Not a public waitlist.
         </p>
         <Button type="submit">Send</Button>
       </div>
