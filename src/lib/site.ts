@@ -1,10 +1,9 @@
 export const site = {
   name: "Cush Core",
   house: "Cush Core",
-  tagline: "Core banking built to withstand examination.",
-  dek: "A licensed system of record for global banks, Tier 1 institutions and central banks. Your brand. Your mandate. Your books.",
-  email: "mfolson@cushpayments.com",
-  phone: "+44 7802 467665",
+  tagline: "The books, under one examination.",
+  dek: "A licensed system of record for global banks, Tier 1 institutions, and central banks. Product, orchestration, an immutable ledger, and multi-rail clearing sit under one control plane. The institution keeps its brand, its mandate, and its books.",
+  email: "matthew@cush-core.com",
   city: "London",
   address: "London",
 } as const;
@@ -22,11 +21,11 @@ export const layers = [
     index: "01",
     name: "Product catalogue",
     title: "Products under your licence.",
-    body: "Accounts, cards, lending, payments and payroll — configured as governed blueprints and issued in your name. Customers see your brand. Supervisors see your books.",
+    body: "Accounts, cards, lending, payments, and payroll are configured as governed blueprints and issued in your name. Customers see your brand. Supervisors see your books.",
     points: [
-      "Current accounts, savings, cards, credit and SME lending",
+      "Current accounts, savings, cards, credit, and SME lending",
       "Cross-border payments and payroll as first-class products",
-      "Hours-to-market product blueprints",
+      "Product blueprints issued in hours, not a change programme",
       "White-label under the institution’s licence",
     ],
   },
@@ -35,7 +34,7 @@ export const layers = [
     index: "02",
     name: "Orchestration",
     title: "Intelligence under institutional mandate.",
-    body: "Risk, routing, reconciliation and first-line operations run as agents inside policy you authorise. Nothing material moves without an explainable, replayable trace.",
+    body: "Risk, routing, reconciliation, and first-line operations run as agents inside policy you authorise. Nothing material moves without an explainable, replayable trace.",
     points: [
       "Multi-rail routing against cost and success rate",
       "In-flight risk scoring and AML orchestration",
@@ -48,12 +47,12 @@ export const layers = [
     index: "03",
     name: "Immutable ledger",
     title: "The book is the evidence.",
-    body: "A cryptographically verifiable ledger is the system of record — not a log beside it. Multi-entity, multi-currency books designed for examination, not reconstruction after the fact.",
+    body: "A cryptographically verifiable ledger is the system of record, not a log beside it. Multi-entity, multi-currency books are designed for examination, not reconstruction after the fact.",
     points: [
       "Cryptographically verifiable history",
       "Multi-entity, multi-currency books",
       "Replay of every posting and every decision",
-      "Ready for a regulator sandbox",
+      "Prepared for a regulator sandbox",
     ],
   },
   {
@@ -61,12 +60,12 @@ export const layers = [
     index: "04",
     name: "Multi-rail connectivity",
     title: "Clearing and settlement on one control plane.",
-    body: "Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2 and local instant schemes post to the same ledger they settle from — under your routing, risk and dual-control rules.",
+    body: "Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, and local instant schemes post to the same ledger they settle from, under your routing, risk, and dual-control rules.",
     points: [
       "Faster Payments, SEPA, Fedwire / ACH, SWIFT",
-      "CHAPS, TARGET2 and local RTGS",
-      "FAST, PIX and other instant schemes",
-      "Routing under cost, success and policy",
+      "CHAPS, TARGET2, and local RTGS",
+      "FAST, PIX, and other instant schemes",
+      "Routing under cost, success, and policy",
     ],
   },
 ] as const;
@@ -108,7 +107,7 @@ export const outboundRails = [
     name: "CHAPS",
     region: "United Kingdom",
     blurb:
-      "Sterling RTGS. Same-day, high-value settlement under standing mandate — not a second payments hub.",
+      "Sterling RTGS. Same-day, high-value settlement under standing mandate, not a second payments hub.",
   },
   {
     code: "TGT",
@@ -129,7 +128,7 @@ export const outboundRails = [
     name: "PIX",
     region: "Brazil",
     blurb:
-      "Instant Brazilian real. Routed on cost, success rate and policy with the rest of the book.",
+      "Instant Brazilian real. Routed on cost, success rate, and policy with the rest of the book.",
   },
 ] as const;
 
@@ -148,7 +147,7 @@ export const onRamps = [
     region: "Europe",
     kind: "Euro inbound",
     blurb:
-      "On-ramp. SEPA credit transfer on the euro book — same policy, same replay, same entity isolation.",
+      "On-ramp. SEPA credit transfer on the euro book. Same policy, same replay, same entity isolation.",
   },
   {
     code: "ACH",
@@ -183,7 +182,7 @@ export const offRamps = [
     region: "United Kingdom",
     kind: "Sterling RTGS",
     blurb:
-      "Off-ramp. Same-day high-value settlement under standing mandate — not a second payments hub.",
+      "Off-ramp. Same-day high-value settlement under standing mandate, not a second payments hub.",
   },
   {
     code: "TGT",
@@ -215,20 +214,20 @@ export const offRamps = [
     region: "Brazil",
     kind: "Instant outbound",
     blurb:
-      "Off-ramp. Instant Brazilian real, routed on cost, success rate and policy with the rest of the book.",
+      "Off-ramp. Instant Brazilian real, routed on cost, success rate, and policy with the rest of the book.",
   },
 ] as const;
 
 export const products = [
   {
     id: "accounts",
-    name: "Accounts & savings",
+    name: "Accounts and savings",
     line: "Issue current and savings accounts in the institution’s brand, on books you can examine.",
   },
   {
     id: "cards",
     name: "Cards",
-    line: "Debit and credit programmes with the same ledger, the same policy, the same replay.",
+    line: "Debit and credit programmes with the same ledger, the same policy, and the same replay.",
   },
   {
     id: "lending",
@@ -237,13 +236,13 @@ export const products = [
   },
   {
     id: "payments",
-    name: "Payments & remittance",
-    line: "Clearing, RTGS, instant schemes, correspondent books and remittance as products you offer — on the same ledger as the account.",
+    name: "Payments and remittance",
+    line: "Clearing, RTGS, instant schemes, correspondent books, and remittance as products you offer, on the same ledger as the account.",
   },
   {
     id: "kyc",
-    name: "Onboarding & KYC",
-    line: "Identity, screening and a guided application journey — ready on day one.",
+    name: "Onboarding and KYC",
+    line: "Identity, screening, and a guided application journey, ready on day one.",
   },
   {
     id: "apis",
@@ -256,30 +255,30 @@ export const institutions = [
   {
     id: "global",
     index: "01",
-    name: "Global & Tier 1 banks",
+    name: "Global and Tier 1 banks",
     title: "Modernise the core without betting the franchise.",
-    body: "Most houses still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensed system of record — brand, mandate and books — from account to rail.",
+    body: "Most houses still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensed system of record: brand, mandate, and books, from account to rail.",
   },
   {
     id: "correspondent",
     index: "02",
-    name: "Correspondent & treasury",
+    name: "Correspondent and treasury",
     title: "Settlement as a governed product.",
-    body: "Clearing, RTGS and instant schemes in one control plane. Routing, risk and reconciliation sit where your treasurer and supervisors already expect an explanation.",
+    body: "Clearing, RTGS, and instant schemes in one control plane. Routing, risk, and reconciliation sit where your treasurer and supervisors already expect an explanation.",
   },
   {
     id: "digital",
     index: "03",
-    name: "Digital banks & licensed PSPs",
-    title: "Sidecar for digital brands. Hours to market on a regulator-readable ledger.",
-    body: "Sit beside the incumbent core when the house will not rip and replace. Governed product blueprints, multi-entity isolation and agentic compliance under your licence.",
+    name: "Digital banks and licensed PSPs",
+    title: "A sidecar for a digital brand, on a ledger a supervisor can read.",
+    body: "Sit beside the incumbent core when the house will not rip and replace. Governed product blueprints, multi-entity isolation, and agentic compliance under your licence.",
   },
   {
     id: "sovereign",
     index: "04",
-    name: "Central banks & development banks",
+    name: "Central banks and development banks",
     title: "National-scale rails with an examination trail.",
-    body: "Capacity is scarce in licensed cores and supervisory expertise — not in another SaaS overlay. Agents on an immutable ledger scale that expertise without a second IT estate.",
+    body: "Capacity is scarce in licensed cores and supervisory expertise, not in another SaaS overlay. Agents on an immutable ledger scale that expertise without a second IT estate.",
   },
 ] as const;
 
@@ -288,25 +287,25 @@ export const agents = [
     id: "risk",
     name: "Risk",
     title: "Score in flight.",
-    body: "Every payment is scored against your policy before it leaves the ledger. Thresholds, typologies and escalation paths remain yours.",
+    body: "Every payment is scored against your policy before it leaves the ledger. Thresholds, typologies, and escalation paths remain yours.",
   },
   {
     id: "routing",
     name: "Routing",
-    title: "Cheapest viable rail.",
-    body: "Agents select among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST and PIX on cost, success rate and mandate — not a static waterfall.",
+    title: "The cheapest viable rail.",
+    body: "Agents select among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX on cost, success rate, and mandate, not a static waterfall.",
   },
   {
     id: "recon",
     name: "Reconciliation",
     title: "Exceptions, closed.",
-    body: "Postings, acknowledgements and scheme confirmations are matched automatically. What cannot be matched is queued with a full trace.",
+    body: "Postings, acknowledgements, and scheme confirmations are matched automatically. What cannot be matched is queued with a full trace.",
   },
   {
     id: "ops",
     name: "Operations",
     title: "First line, under policy.",
-    body: "Routine support, name enquiry and case assembly are handled by agents. Anything material is raised to your officers with the replay attached.",
+    body: "Routine support, name enquiry, and case assembly are handled by agents. Anything material is raised to your officers with the replay attached.",
   },
 ] as const;
 
@@ -321,49 +320,42 @@ export const trustPoints = [
   },
   {
     title: "Books across companies",
-    body: "Multi-entity isolation across the UK, Singapore, the United States and holding structures — one control plane.",
+    body: "Multi-entity isolation across the UK, Singapore, the United States, and holding structures. One control plane.",
   },
   {
     title: "Supervisory readiness",
-    body: "Architecture prepared for PRA, MAS and peer sandbox programmes — and for multi-jurisdiction licensing.",
+    body: "Architecture prepared for PRA, MAS, and peer sandbox programmes, and for multi-jurisdiction licensing. Prepared is not the same as granted.",
   },
 ] as const;
 
 export const leadership = [
   {
     name: "Matthew Ekow Folson",
-    role: "Founder & Chief Executive",
-    line: "Twenty-five years in banking technology and payments. Former HSBC (FOSS Board Chair), Metro Bank (PSD2), Orwell Group. Led the first non-bank PSP onboarded by the Bank of England as a Direct CHAPS member.",
+    role: "Founder and Group CEO",
+    line: "Sole founder. Twenty-five years in banking technology and payments. Former HSBC (FOSS Board Chair), Metro Bank (PSD2), and Orwell Group. Led the first non-bank PSP onboarded by the Bank of England as a Direct CHAPS member.",
   },
   {
     name: "Jose Luis Caldeira",
     role: "Chief Technology Officer",
-    line: "Twenty years in banking technology, digital architecture and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
+    line: "Part-time Chief Technology Officer since October 2025. Not a founder. Twenty years in banking technology, digital architecture, and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
   },
   {
     name: "Paul Singh",
-    role: "MLRO & Chief Compliance Officer",
+    role: "MLRO and Chief Compliance Officer",
     line: "Registered MLRO. Former Bank of England / PRA supervisory background. Previously MLRO for Revolut Payments and Crypto. Clears material external claims and licensing conversations.",
   },
-] as const;
-
-export const stats = [
-  { value: "One", label: "Licensed system of record" },
-  { value: "Four", label: "Layers under one examination" },
-  { value: "75+", label: "Years in regulated payments" },
-  { value: "CHAPS", label: "Direct membership lineage" },
 ] as const;
 
 export const outcomes = [
   {
     index: "01",
-    title: "Time-to-market without a change programme.",
+    title: "Time to market without a change programme.",
     body: "Governed product blueprints issue under your brand. A current account need not wait on a twelve-month board cycle.",
   },
   {
     index: "02",
     title: "Operational intelligence you can defend.",
-    body: "Risk, routing, reconciliation and first-line operations run as agents inside your mandate — with full replay for audit and supervisors.",
+    body: "Risk, routing, reconciliation, and first-line operations run as agents inside your mandate, with full replay for audit and supervisors.",
   },
   {
     index: "03",
@@ -373,7 +365,7 @@ export const outcomes = [
   {
     index: "04",
     title: "One walk-through for the board and the supervisor.",
-    body: "Product, orchestration, ledger and rails in a single examination — for internal audit, correspondents and the regulatory desk.",
+    body: "Product, orchestration, ledger, and rails in a single examination, for internal audit, correspondents, and the regulatory desk.",
   },
 ] as const;
 
@@ -383,7 +375,7 @@ export const adoptionPaths = [
     index: "01",
     name: "Sidecar (coexist)",
     title: "Sit beside the incumbent core.",
-    body: "For digital brands and banks that will not rip and replace. Stand up a digital book, a correspondent product or a new geography first. Evidence first. Leave the back book untouched until the institution decides otherwise.",
+    body: "For digital brands and banks that will not rip and replace. Stand up a digital book, a correspondent product, or a new geography first. Evidence first. Leave the back book untouched until the institution decides otherwise.",
   },
   {
     id: "replatform",
@@ -397,7 +389,7 @@ export const adoptionPaths = [
     index: "03",
     name: "Greenfield",
     title: "Licence a new entity from the first posting.",
-    body: "A subsidiary, digital bank or payments entity — accounts, cards, lending and rails under your name from day one.",
+    body: "A subsidiary, digital bank, or payments entity. Accounts, cards, lending, and rails under your name from day one.",
   },
 ] as const;
 
@@ -405,19 +397,19 @@ export const comparison = {
   columns: ["Stitched estate", "Multi-tenant SaaS", "Cush Core"] as const,
   rows: [
     {
-      label: "Licence & brand",
+      label: "Licence and brand",
       cells: ["Vendor journeys, logo last", "Their product, white-labelled", "Your licence. Your brand."],
     },
     {
       label: "System of record",
-      cells: ["Core + hub + cards, recon later", "Their ledger, your extract", "Immutable ledger you hold"],
+      cells: ["Core, hub, and cards, reconciled later", "Their ledger, your extract", "Immutable ledger you hold"],
     },
     {
       label: "Intelligence",
-      cells: ["Chat overlay on batch", "Generic models on their data", "Agents inside your mandate"],
+      cells: ["A chat overlay on batch", "Generic models on their data", "Agents inside your mandate"],
     },
     {
-      label: "Clearing & settlement",
+      label: "Clearing and settlement",
       cells: ["A second payments hub", "Their corridors, their hours", "Rails on the same book"],
     },
     {
@@ -434,27 +426,27 @@ export const comparison = {
 export const examinationFaqs = [
   {
     q: "Must we replace the incumbent core?",
-    a: "No. Sidecar coexistence is the default path. Run Cush Core beside the existing book for a product line, geography or correspondent flows. Replatform only when the evidence justifies it.",
+    a: "No. Sidecar coexistence is the default path. Run Cush Core beside the existing book for a product line, a geography, or correspondent flows. Replatform only when the evidence justifies it.",
   },
   {
     q: "Who holds the system of record?",
-    a: "The institution. Production posts to an immutable ledger under your licence. We are not a multi-tenant SaaS interposed between you and the books.",
+    a: "The institution. Production posts to an immutable ledger under your licence. Cush Core is not a multi-tenant SaaS interposed between you and the books.",
   },
   {
     q: "How do agents remain inside mandate?",
-    a: "You authorise the policy. Agents score, route, reconcile and escalate inside those rules. Nothing material occurs that cannot be replayed for internal audit or a supervisor.",
+    a: "You authorise the policy. Agents score, route, reconcile, and escalate inside those rules. Nothing material occurs that cannot be replayed for internal audit or a supervisor.",
   },
   {
     q: "Which rails are in scope?",
-    a: "Inbound: Faster Payments, SEPA, Fedwire / ACH, card acquiring, SWIFT. Outbound: CHAPS, TARGET2, SWIFT, local instant schemes. Routing is governed by cost, success rate and mandate.",
+    a: "Inbound: Faster Payments, SEPA, Fedwire / ACH, card acquiring, SWIFT. Outbound: CHAPS, TARGET2, SWIFT, and local instant schemes. Routing is governed by cost, success rate, and mandate.",
   },
   {
     q: "Can a supervisor replay a payment end to end?",
-    a: "Yes. Posting, risk score, rail selection and scheme acknowledgement form a single trace. That is the purpose of an examinable core.",
+    a: "Yes. Posting, risk score, rail selection, and scheme acknowledgement form a single trace. That is the purpose of an examinable core.",
   },
   {
     q: "How is the platform commercialised?",
-    a: "Licensed economics on a per-customer basis — approximately one dollar per month — instead of a stack of vendor licences for ledger, hub, cards and overlay. Exact terms are set in the briefing.",
+    a: "Licensed economics on a per-customer basis, approximately one dollar per month, instead of a stack of vendor licences for ledger, hub, cards, and overlay. That figure is a commercial model, not reported revenue. Exact terms are set in the briefing.",
   },
 ] as const;
 
@@ -464,7 +456,7 @@ export const blueprintCatalog = [
   { id: "debit", name: "Debit cards" },
   { id: "credit", name: "Credit cards" },
   { id: "sme", name: "SME lending" },
-  { id: "pay", name: "Payments & remittance" },
+  { id: "pay", name: "Payments and remittance" },
   { id: "payroll", name: "Payroll" },
   { id: "embed", name: "Embedded APIs" },
 ] as const;
@@ -477,8 +469,35 @@ export const roles = [
   "Head of International",
   "Treasury / Markets",
   "Core modernisation",
-  "Payments & settlement",
-  "Risk & compliance",
+  "Payments and settlement",
+  "Risk and compliance",
   "Central bank / supervisory",
   "Other",
+] as const;
+
+export const furtherReading = [
+  {
+    href: "/platform",
+    index: "01",
+    label: "Architecture",
+    line: "Four layers, the product catalogue, adoption paths, and the rail index.",
+  },
+  {
+    href: "/intelligence",
+    index: "02",
+    label: "Control plane",
+    line: "Risk, routing, reconciliation, and operations, each with a replay.",
+  },
+  {
+    href: "/institutions",
+    index: "03",
+    label: "Institutions",
+    line: "Global banks, correspondents, digital brands, and central banks.",
+  },
+  {
+    href: "/trust",
+    index: "04",
+    label: "Governance",
+    line: "BLAKE3 ledger, principals, and the questions a CIO will ask.",
+  },
 ] as const;

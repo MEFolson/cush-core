@@ -27,7 +27,6 @@ export function BlueprintStudio() {
         in: ["FPS", "SEPA", "Fedwire", "SWIFT"],
         out: ["CHAPS", "TARGET2", "FAST", "PIX"],
       },
-      pricing: { per_customer_month_usd: 1 },
     }),
     [brand, entity, selected],
   );
@@ -49,7 +48,7 @@ export function BlueprintStudio() {
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           Select the products an institution will issue. The JSON is the contract
-          the control plane executes — not a slide.
+          the control plane executes. It is not a slide.
         </p>
 
         <label className="mt-8 block text-xs font-medium uppercase tracking-[0.14em] text-muted">
@@ -58,7 +57,7 @@ export function BlueprintStudio() {
         <input
           value={brand}
           onChange={(e) => setBrand(e.target.value)}
-          className="mt-2 flex h-11 w-full rounded-md border border-line bg-paper px-3.5 text-sm text-ink focus-visible:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+          className="mt-2 flex h-11 w-full border border-line bg-paper px-3.5 text-sm text-ink focus-visible:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
         />
 
         <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">
@@ -72,7 +71,7 @@ export function BlueprintStudio() {
               aria-pressed={entity === item}
               onClick={() => setEntity(item)}
               className={cn(
-                "min-h-10 rounded-md border px-3 text-sm transition-colors duration-150",
+                "min-h-11 border px-3 text-sm transition-colors duration-150",
                 entity === item
                   ? "border-ink bg-ink text-paper"
                   : "border-line text-ink-soft hover:border-ink-soft",
@@ -96,7 +95,7 @@ export function BlueprintStudio() {
                 aria-pressed={on}
                 onClick={() => toggle(item.id)}
                 className={cn(
-                  "min-h-11 rounded-md border px-3 text-left text-sm transition-colors duration-150",
+                  "min-h-11 border px-3 text-left text-sm transition-colors duration-150",
                   on
                     ? "border-ink bg-ink text-paper"
                     : "border-line bg-paper text-ink-soft hover:border-ink-soft",
