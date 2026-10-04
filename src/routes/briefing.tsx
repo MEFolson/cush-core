@@ -60,17 +60,6 @@ function BriefingPage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">House</p>
             <dl className="mt-6 divide-y divide-line border-y border-line text-sm">
               <div className="py-4">
-                <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">Telephone</dt>
-                <dd className="mt-2">
-                  <a
-                    className="underline decoration-signal underline-offset-4"
-                    href={`tel:${site.phone.replace(/\s/g, "")}`}
-                  >
-                    {site.phone}
-                  </a>
-                </dd>
-              </div>
-              <div className="py-4">
                 <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">City</dt>
                 <dd className="mt-2">{site.city}</dd>
               </div>

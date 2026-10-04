@@ -68,14 +68,6 @@ export function SiteFooter() {
                 Contact
               </Link>
             </li>
-            <li>
-              <a
-                className="inline-flex min-h-11 items-center underline decoration-signal underline-offset-4"
-                href={`tel:${site.phone.replace(/\s/g, "")}`}
-              >
-                {site.phone}
-              </a>
-            </li>
             <li className="flex min-h-11 items-center text-muted">{site.city}</li>
           </ul>
         </div>

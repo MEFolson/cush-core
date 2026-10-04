@@ -190,7 +190,7 @@ export function BriefingForm() {
       ) : null}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">
-          Sends to {site.email} Private. Not a public waitlist.
+          Private. Not a public waitlist.
         </p>
         <Button type="submit">Send</Button>
       </div>
