@@ -337,7 +337,7 @@ export const leadership = [
   {
     name: "Jose Luis Caldeira",
     role: "Chief Technology Officer",
-    line: "Twenty years in banking technology, digital architecture, and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
+    line: "More than twenty years designing and running banking platforms in London. Senior roles include Chief Architect at Cynergy Bank; CTO of QOrbital, where he scaled engineering to more than 120 people; Head of Digital Architecture at Metro Bank; and Head of Architecture at TSB. As Chief Architect at Orwell Group he delivered the first Faster Payments and CHAPS certification in the UK for a non-bank, and at Lloyds Banking Group he built the UK's first enterprise Kafka streaming platform. Specialist in event driven ledgers, real time payments, and AI assisted engineering. Author of the house thesis on the vertically integrated bank.",
   },
   {
     name: "Paul Singh",
