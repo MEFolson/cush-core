@@ -337,7 +337,7 @@ export const leadership = [
   {
     name: "Jose Luis Caldeira",
     role: "Chief Technology Officer",
-    line: "Chief Technology Officer since October 2025. Twenty years in banking technology, digital architecture, and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
+    line: "Twenty years in banking technology, digital architecture, and distributed financial systems. Author of the house thesis on the vertically integrated bank.",
   },
   {
     name: "Paul Singh",
