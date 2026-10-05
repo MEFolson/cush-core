@@ -337,7 +337,7 @@ export const leadership = [
   {
     name: "Jose Luis Caldeira",
     role: "Chief Technology Officer",
-    line: "More than twenty years designing and running banking platforms in London. He has served as chief architect and CTO across UK challenger and high street banks, launched two full digital banking platforms from concept to production, and scaled engineering to more than 120 people. He delivered the first Faster Payments and CHAPS certification in the UK for a non-bank, and built the UK's first enterprise Kafka streaming platform at a major bank. Specialist in event driven ledgers, real time payments, and AI assisted engineering. Author of the house thesis on the vertically integrated bank.",
+    line: "More than twenty years building banking platforms in London. Former CTO of QOrbital and head of architecture at Metro Bank and TSB. At Orwell Group he delivered the first Faster Payments and CHAPS certification in the UK for a non-bank, and at Lloyds Banking Group he built the UK's first enterprise Kafka streaming platform. Author of the house thesis on the vertically integrated bank.",
   },
   {
     name: "Paul Singh",
