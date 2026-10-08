@@ -119,11 +119,6 @@ export function BriefingForm() {
 
   return (
     <form onSubmit={submit} className="relative border-y border-line bg-paper px-0 py-8 sm:px-2" noValidate>
-      {/* Honeypot for bots. Hidden from people and assistive technology. */}
-      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-        <label htmlFor="website">Website</label>
-        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
-      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" htmlFor="name">
           <Input
@@ -199,6 +194,11 @@ export function BriefingForm() {
         <Button type="submit" disabled={sending} aria-busy={sending}>
           {sending ? "Sending" : "Send"}
         </Button>
+      </div>
+      {/* Honeypot for bots. Hidden from people and assistive technology. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
     </form>
   );

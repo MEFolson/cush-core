@@ -51,7 +51,12 @@ function textBody(e: Enquiry): string {
   ].join("\n");
 }
 
-async function viaResend(e: Enquiry, to: string, key: string, from: string): Promise<DeliveryResult> {
+async function viaResend(
+  e: Enquiry,
+  to: string,
+  key: string,
+  from: string,
+): Promise<DeliveryResult> {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
@@ -99,7 +104,10 @@ async function viaFormSubmit(e: Enquiry, to: string): Promise<DeliveryResult> {
     /* non-JSON answer is treated as failure below */
   }
   if (res.ok && (data.success === true || data.success === "true")) return { ok: true };
-  return { ok: false, reason: `formsubmit ${res.status}: ${String(data.message ?? raw).slice(0, 300)}` };
+  return {
+    ok: false,
+    reason: `formsubmit ${res.status}: ${String(data.message ?? raw).slice(0, 300)}`,
+  };
 }
 
 export async function deliverEnquiry(input: Enquiry): Promise<DeliveryResult> {
@@ -121,9 +129,13 @@ export const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
 export function clean(v: unknown, max: number): string {
   if (typeof v !== "string") return "";
-  // Strip control characters (keep newlines and tabs) and trim.
-  // eslint-disable-next-line no-control-regex
-  return v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "").trim().slice(0, max);
+  // Strip control characters (keep tabs and newlines) and trim.
+  let out = "";
+  for (const ch of v) {
+    const c = ch.charCodeAt(0);
+    if (c === 9 || c === 10 || c === 13 || (c >= 32 && c !== 127)) out += ch;
+  }
+  return out.trim().slice(0, max);
 }
 
 export function oneLine(v: string): string {
