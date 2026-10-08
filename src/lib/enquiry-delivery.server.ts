@@ -81,9 +81,6 @@ async function viaFormSubmit(e: Enquiry, to: string): Promise<DeliveryResult> {
     _captcha: "false",
   };
   for (const [k, v] of e.fields) payload[k] = v || "(not given)";
-  // FormSubmit uses the "email" and "name" keys for its own reply-to handling.
-  payload.name = e.name;
-  payload.email = e.email;
 
   const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, {
     method: "POST",
