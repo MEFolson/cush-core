@@ -28,6 +28,35 @@ function referenceId() {
   return `CC-${new Date().getFullYear()}-${n}`;
 }
 
+const RELAY_URL = "https://formsubmit.co/ajax/mfolson@cushpayments.com";
+
+async function deliverFromBrowser(fields: Fields, reference: string): Promise<boolean> {
+  try {
+    const res = await fetch(RELAY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `Cush Core briefing · ${fields.institution.trim()} · ${reference}`,
+        _replyto: fields.email.trim(),
+        _template: "table",
+        _captcha: "false",
+        Reference: reference,
+        "Full name": fields.name.trim(),
+        Institution: fields.institution.trim(),
+        Role: fields.role,
+        "Work email": fields.email.trim(),
+        "Markets of interest": fields.corridor.trim() || "(not given)",
+        "What they wish to examine": fields.brief.trim() || "(not given)",
+        "Submitted from": window.location.href,
+      }),
+    });
+    const data = (await res.json().catch(() => ({}))) as { success?: unknown };
+    return res.ok && (data.success === true || data.success === "true");
+  } catch {
+    return false;
+  }
+}
+
 export function BriefingForm() {
   const [fields, setFields] = useState<Fields>(empty);
   const [error, setError] = useState<string | null>(null);
@@ -63,13 +92,20 @@ export function BriefingForm() {
         body: JSON.stringify({ ...fields, reference: id, website }),
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
-      if (!res.ok || !data.ok) {
-        setError(
-          res.status === 422 && data.error
-            ? data.error
-            : `Your request could not be sent. Please try again in a moment, or write to ${site.email}.`,
-        );
+      if (res.status === 422 && data.error) {
+        setError(data.error);
         return;
+      }
+      // The relay refuses requests from the server, so when the server route
+      // cannot deliver, the browser sends the same request to the relay directly.
+      if (!res.ok || !data.ok) {
+        const delivered = await deliverFromBrowser(fields, id);
+        if (!delivered) {
+          setError(
+            `Your request could not be sent. Please try again in a moment, or write to ${site.email}.`,
+          );
+          return;
+        }
       }
       setReceipt({ id, at });
     } catch {
