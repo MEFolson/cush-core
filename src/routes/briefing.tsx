@@ -49,8 +49,8 @@ function BriefingPage() {
           <div className="px-5 py-12 sm:px-8 lg:col-span-8 lg:border-r lg:border-line lg:pr-12">
             <h2 className="font-display text-2xl font-normal">Request</h2>
             <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-muted">
-              The form is the contact. It is addressed to the house. Nothing is stored
-              on a server from this page.
+              The form is the contact. It is addressed to the house and delivered by
+              email to a principal.
             </p>
             <div className="mt-8">
               <BriefingForm />

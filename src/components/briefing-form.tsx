@@ -32,52 +32,53 @@ export function BriefingForm() {
   const [fields, setFields] = useState<Fields>(empty);
   const [error, setError] = useState<string | null>(null);
   const [receipt, setReceipt] = useState<{ id: string; at: string } | null>(null);
+  const [sending, setSending] = useState(false);
 
   function update<K extends keyof Fields>(key: K, value: Fields[K]) {
     setFields((f) => ({ ...f, [key]: value }));
   }
 
-  function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (sending) return;
     setError(null);
     if (!fields.name.trim() || !fields.institution.trim() || !fields.email.trim()) {
       setError("Name, institution and work email are required.");
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.trim())) {
       setError("Enter a valid work email.");
       return;
     }
     const id = referenceId();
     const at = new Date().toISOString();
-    const payload = { id, at, ...fields };
+    const website = (
+      e.currentTarget.elements.namedItem("website") as HTMLInputElement | null
+    )?.value;
+    setSending(true);
     try {
-      const prev = JSON.parse(localStorage.getItem("cush-core-briefings") ?? "[]") as unknown[];
-      localStorage.setItem("cush-core-briefings", JSON.stringify([payload, ...prev].slice(0, 20)));
+      const res = await fetch("/api/briefing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...fields, reference: id, website }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        setError(
+          res.status === 422 && data.error
+            ? data.error
+            : `Your request could not be sent. Please try again in a moment, or write to ${site.email}.`,
+        );
+        return;
+      }
+      setReceipt({ id, at });
     } catch {
-      /* ignore quota */
+      setError(
+        `Your request could not be sent. Please check your connection and try again, or write to ${site.email}.`,
+      );
+    } finally {
+      setSending(false);
     }
-    const subject = encodeURIComponent(`Cush Core briefing · ${fields.institution} · ${id}`);
-    const body = encodeURIComponent(
-      [
-        `Reference: ${id}`,
-        `Name: ${fields.name}`,
-        `Institution: ${fields.institution}`,
-        `Role: ${fields.role}`,
-        `Email: ${fields.email}`,
-        `Markets: ${fields.corridor || "(not stated)"}`,
-        "",
-        fields.brief || "A private walk-through of the control plane.",
-      ].join("\n"),
-    );
-    const mailto = `mailto:${site.email}?subject=${subject}&body=${body}`;
-    const opener = document.createElement("a");
-    opener.href = mailto;
-    opener.style.display = "none";
-    document.body.appendChild(opener);
-    opener.click();
-    opener.remove();
-    setReceipt({ id, at });
   }
 
   if (receipt) {
@@ -86,12 +87,10 @@ export function BriefingForm() {
         <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Contact</p>
         <div className="mt-4 h-px w-10 bg-signal" aria-hidden="true" />
         <h3 className="mt-4 font-display text-3xl font-normal">
-          Send the message to complete your request.
+          Your request has reached the house.
         </h3>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
-          Nothing is stored on our servers yet. Your details stay in this browser and
-          in the message that should have opened, addressed to {site.email} Send it
-          so a principal can reply. Keep the reference for your file.
+          A principal will reply to {fields.email}. Keep the reference for your file.
         </p>
         <dl className="mt-8 grid gap-4 sm:grid-cols-2">
           <div className="border-t border-line pt-3">
@@ -119,7 +118,7 @@ export function BriefingForm() {
   }
 
   return (
-    <form onSubmit={submit} className="border-y border-line bg-paper px-0 py-8 sm:px-2">
+    <form onSubmit={submit} className="relative border-y border-line bg-paper px-0 py-8 sm:px-2" noValidate>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" htmlFor="name">
           <Input
@@ -184,7 +183,7 @@ export function BriefingForm() {
         </div>
       </div>
       {error ? (
-        <p className="mt-4 text-sm text-ink" role="alert">
+        <p className="mt-4 text-sm text-ink" role="alert" aria-live="assertive">
           {error}
         </p>
       ) : null}
@@ -192,7 +191,14 @@ export function BriefingForm() {
         <p className="text-xs text-muted">
           Private. Not a public waitlist.
         </p>
-        <Button type="submit">Send</Button>
+        <Button type="submit" disabled={sending} aria-busy={sending}>
+          {sending ? "Sending" : "Send"}
+        </Button>
+      </div>
+      {/* Honeypot for bots. Hidden from people and assistive technology. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
     </form>
   );
