@@ -15,6 +15,7 @@ import { Route as InstitutionsRouteImport } from './routes/institutions'
 import { Route as IntelligenceRouteImport } from './routes/intelligence'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as TrustRouteImport } from './routes/trust'
+import { Route as ApiBriefingRouteImport } from './routes/api/briefing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const TrustRoute = TrustRouteImport.update({
   path: '/trust',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBriefingRoute = ApiBriefingRouteImport.update({
+  id: '/api/briefing',
+  path: '/api/briefing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/intelligence': typeof IntelligenceRoute
   '/platform': typeof PlatformRoute
   '/trust': typeof TrustRoute
+  '/api/briefing': typeof ApiBriefingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/intelligence': typeof IntelligenceRoute
   '/platform': typeof PlatformRoute
   '/trust': typeof TrustRoute
+  '/api/briefing': typeof ApiBriefingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/intelligence': typeof IntelligenceRoute
   '/platform': typeof PlatformRoute
   '/trust': typeof TrustRoute
+  '/api/briefing': typeof ApiBriefingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/intelligence'
     | '/platform'
     | '/trust'
+    | '/api/briefing'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/intelligence'
     | '/platform'
     | '/trust'
+    | '/api/briefing'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/intelligence'
     | '/platform'
     | '/trust'
+    | '/api/briefing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +118,7 @@ export interface RootRouteChildren {
   IntelligenceRoute: typeof IntelligenceRoute
   PlatformRoute: typeof PlatformRoute
   TrustRoute: typeof TrustRoute
+  ApiBriefingRoute: typeof ApiBriefingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrustRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/briefing': {
+      id: '/api/briefing'
+      path: '/api/briefing'
+      fullPath: '/api/briefing'
+      preLoaderRoute: typeof ApiBriefingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   IntelligenceRoute: IntelligenceRoute,
   PlatformRoute: PlatformRoute,
   TrustRoute: TrustRoute,
+  ApiBriefingRoute: ApiBriefingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
