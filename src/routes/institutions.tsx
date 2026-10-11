@@ -22,7 +22,7 @@ function InstitutionsPage() {
         folio="04"
         kicker="Institutions"
         title="For the house that must still explain the books."
-        lead="Cush Core is licensed to banks, payment companies, and governments. The buyer is the institution that sits with the supervisor, the correspondent, and the board."
+        lead="Cush Core is licensable by banks, payment companies, and governments. The buyer is the institution that sits with the supervisor, the correspondent, and the board."
       />
 
       <section className="border-b border-line bg-paper">

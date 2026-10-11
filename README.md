@@ -1,6 +1,6 @@
 # Cush Core
 
-Licensed core banking for global banks, Tier 1 institutions, and central banks.
+Licensable core banking for global banks, Tier 1 institutions, and central banks.
 
 One immutable ledger. Agents under the institution’s mandate. On-ramp and off-ramp on the same book.
 

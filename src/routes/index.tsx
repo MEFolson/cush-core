@@ -9,7 +9,7 @@ import { furtherReading, layers, leadership, offRamps, onRamps, site } from "@/l
 export const Route = createFileRoute("/")({
   head: () =>
     pageMeta({
-      title: "Cush Core · Licensed core banking for global banks, Tier 1 and central banks",
+      title: "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
       description: site.dek,
     }),
   component: Home,
@@ -24,7 +24,7 @@ function Home() {
         <div className="mx-auto grid max-w-6xl lg:grid-cols-12">
           <div className="px-5 py-14 sm:px-8 sm:py-20 lg:col-span-7 lg:py-24 lg:pr-14">
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
-              Licensed core · London
+              Licensable core · London
             </p>
             <div className="mt-5 h-px w-12 bg-signal" aria-hidden="true" />
             <h1 className="mt-6 max-w-[16ch] font-display text-4xl font-normal leading-[1.05] sm:text-6xl">
@@ -49,7 +49,7 @@ function Home() {
                 Examination index
               </p>
               <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-muted">
-                One licensed system of record. Four layers under one examination.
+                One licensable system of record. Four layers under one examination.
                 A description of the product, not a record of volume.
               </p>
             </div>
