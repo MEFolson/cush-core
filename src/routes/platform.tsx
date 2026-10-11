@@ -26,7 +26,7 @@ function PlatformPage() {
         folio="02"
         kicker="Architecture"
         title="From the account to the rail."
-        lead="Many institutions still stitch a domestic core, a payments hub, and a card processor. Cush Core is the book, the agents, and the rails, licensed under your name."
+        lead="Many institutions still stitch a domestic core, a payments hub, and a card processor. Cush Core is the book, the agents, and the rails, licensable under your name."
       />
 
       <section className="border-b border-line bg-paper">
@@ -74,7 +74,7 @@ function PlatformPage() {
             <h2 className="mt-4 font-display text-3xl font-normal">Sidecar, replatform, or greenfield.</h2>
           </div>
           <p className="max-w-[65ch] text-sm leading-relaxed text-muted lg:col-span-7 lg:pt-10">
-            The same licensed core. Three ways in, so the board does not have to
+            The same licensable core. Three ways in, so the board does not have to
             bet the house on a weekend.
           </p>
         </div>

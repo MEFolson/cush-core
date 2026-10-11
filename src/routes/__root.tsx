@@ -10,12 +10,12 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         title:
-          "Cush Core · Licensed core banking for global banks, Tier 1 and central banks",
+          "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
       },
       {
         name: "description",
         content:
-          "Cush Core is licensed core banking for global banks, Tier 1 institutions and central banks. Immutable ledger. Institutional mandate. Clearing and settlement on one system of record.",
+          "Cush Core is licensable core banking for global banks, Tier 1 institutions and central banks. Immutable ledger. Institutional mandate. Clearing and settlement on one system of record.",
       },
       { name: "theme-color", content: "#f4f1ea" },
       { property: "og:type", content: "website" },
@@ -23,12 +23,12 @@ export const Route = createRootRoute({
       {
         property: "og:title",
         content:
-          "Cush Core · Licensed core banking for global banks, Tier 1 and central banks",
+          "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
       },
       {
         property: "og:description",
         content:
-          "Cush Core is licensed core banking for global banks, Tier 1 institutions and central banks. Immutable ledger. Institutional mandate. Clearing and settlement on one system of record.",
+          "Cush Core is licensable core banking for global banks, Tier 1 institutions and central banks. Immutable ledger. Institutional mandate. Clearing and settlement on one system of record.",
       },
       { property: "og:image", content: "/og.jpg" },
       { name: "twitter:card", content: "summary_large_image" },

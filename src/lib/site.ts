@@ -2,7 +2,7 @@ export const site = {
   name: "Cush Core",
   house: "Cush Core",
   tagline: "The books, under one examination.",
-  dek: "A licensed system of record for global banks, Tier 1 institutions, and central banks. Product, orchestration, an immutable ledger, and multi-rail clearing sit under one control plane. The institution keeps its brand, its mandate, and its books.",
+  dek: "A licensable system of record for global banks, Tier 1 institutions, and central banks. Product, orchestration, an immutable ledger, and multi-rail clearing sit under one control plane. The institution keeps its brand, its mandate, and its books.",
   email: "matthew@cush-core.com",
   city: "London",
   address: "London",
@@ -257,7 +257,7 @@ export const institutions = [
     index: "01",
     name: "Global and Tier 1 banks",
     title: "Modernise the core without betting the franchise.",
-    body: "Most houses still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensed system of record: brand, mandate, and books, from account to rail.",
+    body: "Most houses still stitch a domestic core to a payments hub and a card processor. Cush Core is one licensable system of record: brand, mandate, and books, from account to rail.",
   },
   {
     id: "correspondent",
@@ -446,7 +446,7 @@ export const examinationFaqs = [
   },
   {
     q: "How is the platform commercialised?",
-    a: "Licensed economics on a per-customer basis, approximately one dollar per month, instead of a stack of vendor licences for ledger, hub, cards, and overlay. That figure is a commercial model, not reported revenue. Exact terms are set in the briefing.",
+    a: "Licence economics on a per-customer basis, approximately one dollar per month, instead of a stack of vendor licences for ledger, hub, cards, and overlay. That figure is a commercial model, not reported revenue. Exact terms are set in the briefing.",
   },
 ] as const;
 

@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="lg:col-span-5">
           <Mark />
           <p className="mt-6 max-w-[46ch] text-sm leading-relaxed text-muted">
-            Licensed core banking for global banks, Tier 1 institutions, and
+            Licensable core banking for global banks, Tier 1 institutions, and
             central banks. The institution keeps its brand, its mandate, and its books.
           </p>
           <p className="mt-4 max-w-[46ch] text-sm leading-relaxed text-muted">
@@ -74,7 +74,7 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto flex max-w-6xl flex-col gap-2 border-t border-line px-5 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p>
-          © {new Date().getFullYear()} {site.house}. Licensed core. Not a bank.
+          © {new Date().getFullYear()} {site.house}. Licensable core. Not a bank.
         </p>
         <p>Built to be examined.</p>
       </div>
