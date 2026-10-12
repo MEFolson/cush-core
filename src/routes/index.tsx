@@ -118,6 +118,22 @@ function Home() {
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:items-end lg:py-20">
           <div className="lg:col-span-7">
+            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Blueprints</p>
+            <h2 className="mt-4 max-w-[20ch] font-display text-3xl font-normal sm:text-4xl">
+              Outcomes, not silos
+            </h2>
+          </div>
+          <p className="max-w-[48ch] text-sm leading-relaxed text-muted lg:col-span-5">
+            Governed blueprints let a bank combine lending, savings and payments around
+            what a customer is trying to achieve, while the ledger records the evidence
+            behind every step.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-paper">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:items-end lg:py-20">
+          <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Rails</p>
             <h2 className="mt-4 max-w-[20ch] font-display text-3xl font-normal sm:text-4xl">
               Clearing and settlement on the same book.

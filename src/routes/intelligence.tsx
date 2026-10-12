@@ -46,6 +46,11 @@ function IntelligencePage() {
               available. The advantage here is the institution’s data, its policy,
               and a loop that can pay, flag, or resolve, then show its work.
             </p>
+            <p className="mt-4 max-w-[48ch] text-sm leading-relaxed text-muted">
+              Not a chatbot on yesterday's ledger. Governed agents that weigh trade offs
+              inside consent and regulatory boundaries, with every decision replayable
+              for the supervisor the same afternoon.
+            </p>
           </div>
           <ol className="border-t border-line lg:col-span-7">
             {procedure.map((step) => (
