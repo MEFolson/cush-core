@@ -3,6 +3,8 @@ import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { pageMeta } from "@/lib/page-meta";
+import { CopySection } from "@/components/copy-section";
+import { brandsEcho, customerNetwork } from "@/lib/copy-v2";
 import { institutions } from "@/lib/site";
 
 export const Route = createFileRoute("/institutions")({
@@ -98,6 +100,19 @@ function InstitutionsPage() {
             </li>
           ))}
         </ul>
+        <div className="mx-auto max-w-6xl border-b border-line px-5 py-10 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal lg:col-span-5">
+            Brands and entities
+          </p>
+          <p className="mt-3 max-w-[65ch] font-display text-2xl font-normal leading-snug lg:col-span-7 lg:mt-0">
+            {brandsEcho}
+          </p>
+        </div>
+      </section>
+
+      <CopySection block={customerNetwork} />
+
+      <section className="bg-paper">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p className="max-w-[48ch] text-sm leading-relaxed text-muted">
             If you already run international, correspondent, or a multi-entity book,
