@@ -35,7 +35,7 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="lg:col-span-3">
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">House</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Explore</p>
           <ul className="mt-3">
             {nav.map((item) => (
               <li key={item.href}>
@@ -67,7 +67,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="lg:col-span-4">
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">London</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Contact</p>
           <ul className="mt-3 text-sm">
             <li>
               <Link
