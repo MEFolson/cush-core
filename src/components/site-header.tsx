@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { nav, site } from "@/lib/site";
+import { nav, sandbox, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Mark } from "@/components/mark";
@@ -37,6 +37,16 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <a
+            href={sandbox.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={sandbox.title}
+            aria-label={sandbox.ariaLabel}
+            className="inline-flex min-h-11 items-center text-sm text-muted hover:text-ink"
+          >
+            {sandbox.label}
+          </a>
           <Button asChild>
             <Link to="/briefing">Request a briefing</Link>
           </Button>
@@ -71,6 +81,17 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={sandbox.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={sandbox.title}
+              aria-label={sandbox.ariaLabel}
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center border-b border-line text-base text-muted"
+            >
+              {sandbox.label}
+            </a>
             <Button asChild className="mt-3 w-full">
               <Link to="/briefing" onClick={() => setOpen(false)}>
                 Request a briefing
