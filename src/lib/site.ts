@@ -332,7 +332,7 @@ export const leadership = [
   {
     name: "Matthew Ekow Folson",
     role: "Founder and Group CEO",
-    line: "Sole founder. Twenty-five years in banking technology and payments. Former HSBC (FOSS Board Chair), Metro Bank (PSD2), and Orwell Group. Led the first non-bank PSP onboarded by the Bank of England as a Direct CHAPS member.",
+    line: "Sole founder. Twenty-five years in banking technology and payments. Former HSBC (EFOSS Board Chair), Metro Bank (PSD2), and Orwell Group. Led the first non-bank PSP onboarded by the Bank of England as a Direct CHAPS member.",
   },
   {
     name: "Jose Luis Caldeira",
