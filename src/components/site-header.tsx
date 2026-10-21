@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { nav, site } from "@/lib/site";
+import { nav, sandbox, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Mark } from "@/components/mark";
@@ -37,6 +37,18 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Link
+            to={sandbox.href}
+            title={sandbox.title}
+            className={cn(
+              "inline-flex min-h-11 items-center text-sm",
+              pathname === sandbox.href
+                ? "text-ink underline decoration-signal decoration-2 underline-offset-8"
+                : "text-muted hover:text-ink",
+            )}
+          >
+            {sandbox.label}
+          </Link>
           <Button asChild>
             <Link to="/briefing">Request a briefing</Link>
           </Button>
@@ -71,6 +83,17 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              to={sandbox.href}
+              title={sandbox.title}
+              onClick={() => setOpen(false)}
+              className={cn(
+                "flex min-h-11 items-center border-b border-line text-base",
+                pathname === sandbox.href ? "text-ink" : "text-muted",
+              )}
+            >
+              {sandbox.label}
+            </Link>
             <Button asChild className="mt-3 w-full">
               <Link to="/briefing" onClick={() => setOpen(false)}>
                 Request a briefing

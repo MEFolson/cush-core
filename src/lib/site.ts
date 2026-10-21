@@ -15,6 +15,14 @@ export const nav = [
   { href: "/trust", label: "Governance" },
 ] as const;
 
+export const sandbox = {
+  href: "/sandbox",
+  label: "Sandbox",
+  title: "Cush Core Portal",
+  portalHref: "https://cushpayments.co.uk:8443/",
+  portalLabel: "Cush Core Portal",
+} as const;
+
 export const layers = [
   {
     id: "catalogue",

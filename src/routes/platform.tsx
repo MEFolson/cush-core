@@ -8,6 +8,19 @@ import { Button } from "@/components/ui/button";
 import { products } from "@/lib/site";
 import { AdoptionPaths } from "@/components/adoption-paths";
 import { pageMeta } from "@/lib/page-meta";
+import { CopyAddition, CopyFaq, CopySection } from "@/components/copy-section";
+import {
+  brandsOneBook,
+  contractIsProduct,
+  defineOnce,
+  onboardingJourney,
+  openBanking,
+  operatorPortal,
+  paymentsProcessing,
+  paymentsRailsLine,
+  replayExact,
+  scaleOut,
+} from "@/lib/copy-v2";
 
 export const Route = createFileRoute("/platform")({
   head: () =>
@@ -54,18 +67,34 @@ function PlatformPage() {
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="font-display text-2xl font-normal lg:col-span-4">{item.name}</h3>
-                <p className="max-w-[65ch] text-sm leading-relaxed text-muted lg:col-span-6">{item.line}</p>
+                <div className="lg:col-span-6">
+                  <p className="max-w-[65ch] text-sm leading-relaxed text-muted">{item.line}</p>
+                  {item.id === "kyc" ? <CopyAddition block={onboardingJourney} className="mt-6" /> : null}
+                </div>
               </div>
             </li>
           ))}
         </ul>
+        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:grid lg:grid-cols-12">
+          <CopyAddition block={defineOnce} className="lg:col-span-8 lg:col-start-5" />
+        </div>
       </section>
+
+      <CopySection block={operatorPortal} />
+
+      <CopySection block={scaleOut} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <BlueprintStudio />
+          <div className="mt-12 grid gap-10 lg:grid-cols-2">
+            <CopyAddition block={contractIsProduct} />
+            <CopyAddition block={brandsOneBook} />
+          </div>
         </div>
       </section>
+
+      <CopySection block={replayExact} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-6 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
@@ -83,7 +112,7 @@ function PlatformPage() {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Connectivity</p>
@@ -97,6 +126,22 @@ function PlatformPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <RailIndex />
         </div>
+        <div className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 lg:grid lg:grid-cols-12">
+          <div className="lg:col-span-8 lg:col-start-5">
+            <CopyAddition
+              block={{ ...paymentsProcessing, faq: undefined }}
+            />
+            <div className="mt-6 max-w-[65ch] border-l-2 border-signal pl-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Rails</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{paymentsRailsLine}</p>
+            </div>
+            {paymentsProcessing.faq ? (
+              <div className="max-w-[65ch]">
+                <CopyFaq faq={paymentsProcessing.faq} />
+              </div>
+            ) : null}
+          </div>
+        </div>
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p className="max-w-[48ch] text-sm leading-relaxed text-muted">
             Commercial terms, including the per-customer model, are set in the briefing
@@ -107,6 +152,8 @@ function PlatformPage() {
           </Button>
         </div>
       </section>
+
+      <CopySection block={openBanking} last />
     </SiteShell>
   );
 }

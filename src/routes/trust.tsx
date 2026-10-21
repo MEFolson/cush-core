@@ -4,6 +4,17 @@ import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { ExamFaq } from "@/components/exam-faq";
 import { pageMeta } from "@/lib/page-meta";
+import { CopyAddition, CopySection } from "@/components/copy-section";
+import {
+  accessControl,
+  authentication,
+  complianceByDesign,
+  examinerNode,
+  objectLedger,
+  observability,
+  oneRecord,
+  securityLayers,
+} from "@/lib/copy-v2";
 import { leadership, trustPoints } from "@/lib/site";
 
 export const Route = createFileRoute("/trust")({
@@ -48,6 +59,12 @@ function TrustPage() {
         </div>
       </section>
 
+      <CopySection block={examinerNode} />
+
+      <CopySection block={oneRecord} />
+
+      <CopySection block={objectLedger} />
+
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">
           <div className="lg:col-span-4">
@@ -74,9 +91,18 @@ function TrustPage() {
               single trace. Internal audit does not reconstruct the payment from
               three systems.
             </p>
+            <CopyAddition block={complianceByDesign} className="mt-10" />
           </div>
         </div>
       </section>
+
+      <CopySection block={authentication} />
+
+      <CopySection block={securityLayers} />
+
+      <CopySection block={accessControl} />
+
+      <CopySection block={observability} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">

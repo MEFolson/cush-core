@@ -5,6 +5,8 @@ import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { agents } from "@/lib/site";
 import { pageMeta } from "@/lib/page-meta";
+import { CopySection } from "@/components/copy-section";
+import { governedAgents, intentAndExecution } from "@/lib/copy-v2";
 
 const procedure = [
   { index: "01", name: "On-ramp", line: "The instruction arrives on a named scheme." },
@@ -35,6 +37,8 @@ function IntelligencePage() {
         title="Agents, under your mandate."
         lead="Cush Core is AI-native. Risk, routing, reconciliation, and first-line operations run as agents inside policy you write. Nothing material happens that cannot be replayed."
       />
+
+      <CopySection block={intentAndExecution} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:px-8 lg:grid-cols-12 lg:py-20">
@@ -85,6 +89,8 @@ function IntelligencePage() {
           ))}
         </div>
       </section>
+
+      <CopySection block={governedAgents} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">

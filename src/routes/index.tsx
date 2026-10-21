@@ -3,6 +3,8 @@ import { SiteShell } from "@/components/site-shell";
 import { Button } from "@/components/ui/button";
 import { CompareTable } from "@/components/compare-table";
 import { RailIndex } from "@/components/rail-index";
+import { CopySection } from "@/components/copy-section";
+import { heroOption, oneArchitecture, setsApart } from "@/lib/copy-v2";
 import { pageMeta } from "@/lib/page-meta";
 import { furtherReading, layers, leadership, offRamps, onRamps, site } from "@/lib/site";
 
@@ -28,10 +30,10 @@ function Home() {
             </p>
             <div className="mt-5 h-px w-12 bg-signal" aria-hidden="true" />
             <h1 className="mt-6 max-w-[16ch] font-display text-4xl font-normal leading-[1.05] sm:text-6xl">
-              {site.tagline}
+              {heroOption.headline}
             </h1>
             <p className="mt-6 max-w-[65ch] text-base leading-relaxed text-muted sm:text-lg">
-              {site.dek}
+              {heroOption.dek}
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
@@ -81,6 +83,8 @@ function Home() {
         </div>
       </section>
 
+      <CopySection block={setsApart} />
+
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-24">
           <div className="lg:col-span-4">
@@ -114,6 +118,8 @@ function Home() {
           <CompareTable />
         </div>
       </section>
+
+      <CopySection block={oneArchitecture} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:items-end lg:py-20">
@@ -219,6 +225,11 @@ function Home() {
               <Link to="/briefing">Request a private briefing</Link>
             </Button>
           </div>
+        </div>
+        <div className="border-t border-night-line">
+          <p className="mx-auto max-w-6xl px-5 py-10 font-display text-2xl font-normal text-paper sm:px-8 sm:text-3xl">
+            {heroOption.closing}
+          </p>
         </div>
       </section>
     </SiteShell>

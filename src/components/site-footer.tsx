@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { nav, site } from "@/lib/site";
+import { nav, sandbox, site } from "@/lib/site";
 import { Mark } from "@/components/mark";
 
 export function SiteFooter() {
@@ -47,6 +47,15 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to={sandbox.href}
+                title={sandbox.title}
+                className="inline-flex min-h-11 items-center text-sm underline decoration-signal underline-offset-4"
+              >
+                {sandbox.label}
+              </Link>
+            </li>
             <li>
               <Link
                 to="/briefing"
