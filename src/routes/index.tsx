@@ -26,7 +26,7 @@ function Home() {
         <div className="mx-auto grid max-w-6xl lg:grid-cols-12">
           <div className="px-5 py-14 sm:px-8 sm:py-20 lg:col-span-7 lg:py-24 lg:pr-14">
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">
-              Licensable core · London
+              Licensable core
             </p>
             <div className="mt-5 h-px w-12 bg-signal" aria-hidden="true" />
             <h1 className="mt-6 max-w-[16ch] font-display text-4xl font-normal leading-[1.05] sm:text-6xl">
@@ -210,7 +210,6 @@ function Home() {
               Private briefing
             </p>
             <div className="mt-5 h-px w-12 bg-paper/70" aria-hidden="true" />
-            <p className="mt-5 font-mono text-xs text-night-muted">{site.city}</p>
           </div>
           <div className="px-5 py-12 sm:px-8 lg:col-span-8 lg:px-12 lg:py-20">
             <h2 className="max-w-[18ch] font-display text-3xl font-normal text-paper sm:text-5xl">

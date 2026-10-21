@@ -77,7 +77,6 @@ export function SiteFooter() {
                 Contact
               </Link>
             </li>
-            <li className="flex min-h-11 items-center text-muted">{site.city}</li>
           </ul>
         </div>
       </div>
