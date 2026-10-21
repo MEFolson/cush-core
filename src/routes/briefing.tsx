@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BriefingForm } from "@/components/briefing-form";
 import { PageIntro } from "@/components/page-intro";
 import { SiteShell } from "@/components/site-shell";
-import { site } from "@/lib/site";
 import { pageMeta } from "@/lib/page-meta";
 
 const cover = [
@@ -45,26 +44,16 @@ function BriefingPage() {
           ))}
         </ol>
 
-        <div className="mx-auto grid max-w-6xl lg:grid-cols-12">
-          <div className="px-5 py-12 sm:px-8 lg:col-span-8 lg:border-r lg:border-line lg:pr-12">
+        <div className="mx-auto max-w-6xl">
+          <div className="px-5 py-12 sm:px-8">
             <h2 className="font-display text-2xl font-normal">Request</h2>
             <p className="mt-2 max-w-[65ch] text-sm leading-relaxed text-muted">
-              The form is the contact. It is addressed to the house and delivered by
-              email to a principal.
+              The form is the contact. It is delivered by email to a principal.
             </p>
             <div className="mt-8">
               <BriefingForm />
             </div>
           </div>
-          <aside className="border-t border-line px-5 py-12 sm:px-8 lg:col-span-4 lg:border-t-0 lg:py-12">
-            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">House</p>
-            <dl className="mt-6 divide-y divide-line border-y border-line text-sm">
-              <div className="py-4">
-                <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">City</dt>
-                <dd className="mt-2">{site.city}</dd>
-              </div>
-            </dl>
-          </aside>
         </div>
       </section>
     </SiteShell>

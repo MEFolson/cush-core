@@ -4,8 +4,6 @@ export const site = {
   tagline: "The books, under one examination.",
   dek: "A licensable system of record for global banks, Tier 1 institutions, and central banks. Product, orchestration, an immutable ledger, and multi-rail clearing sit under one control plane. The institution keeps its brand, its mandate, and its books.",
   email: "matthew@cush-core.com",
-  city: "London",
-  address: "London",
 } as const;
 
 export const nav = [
