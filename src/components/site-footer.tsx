@@ -48,16 +48,13 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <a
-                href={sandbox.href}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={sandbox.href}
                 title={sandbox.title}
-                aria-label={sandbox.ariaLabel}
                 className="inline-flex min-h-11 items-center text-sm underline decoration-signal underline-offset-4"
               >
                 {sandbox.label}
-              </a>
+              </Link>
             </li>
             <li>
               <Link

@@ -14,6 +14,7 @@ import { Route as BriefingRouteImport } from './routes/briefing'
 import { Route as InstitutionsRouteImport } from './routes/institutions'
 import { Route as IntelligenceRouteImport } from './routes/intelligence'
 import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as SandboxRouteImport } from './routes/sandbox'
 import { Route as TrustRouteImport } from './routes/trust'
 import { Route as ApiBriefingRouteImport } from './routes/api/briefing'
 
@@ -42,6 +43,11 @@ const PlatformRoute = PlatformRouteImport.update({
   path: '/platform',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SandboxRoute = SandboxRouteImport.update({
+  id: '/sandbox',
+  path: '/sandbox',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TrustRoute = TrustRouteImport.update({
   id: '/trust',
   path: '/trust',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/institutions': typeof InstitutionsRoute
   '/intelligence': typeof IntelligenceRoute
   '/platform': typeof PlatformRoute
+  '/sandbox': typeof SandboxRoute
   '/trust': typeof TrustRoute
   '/api/briefing': typeof ApiBriefingRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/institutions': typeof InstitutionsRoute
   '/intelligence': typeof IntelligenceRoute
   '/platform': typeof PlatformRoute
+  '/sandbox': typeof SandboxRoute
   '/trust': typeof TrustRoute
   '/api/briefing': typeof ApiBriefingRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/institutions': typeof InstitutionsRoute
   '/intelligence': typeof IntelligenceRoute
   '/platform': typeof PlatformRoute
+  '/sandbox': typeof SandboxRoute
   '/trust': typeof TrustRoute
   '/api/briefing': typeof ApiBriefingRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/institutions'
     | '/intelligence'
     | '/platform'
+    | '/sandbox'
     | '/trust'
     | '/api/briefing'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/institutions'
     | '/intelligence'
     | '/platform'
+    | '/sandbox'
     | '/trust'
     | '/api/briefing'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/institutions'
     | '/intelligence'
     | '/platform'
+    | '/sandbox'
     | '/trust'
     | '/api/briefing'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   InstitutionsRoute: typeof InstitutionsRoute
   IntelligenceRoute: typeof IntelligenceRoute
   PlatformRoute: typeof PlatformRoute
+  SandboxRoute: typeof SandboxRoute
   TrustRoute: typeof TrustRoute
   ApiBriefingRoute: typeof ApiBriefingRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlatformRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sandbox': {
+      id: '/sandbox'
+      path: '/sandbox'
+      fullPath: '/sandbox'
+      preLoaderRoute: typeof SandboxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trust': {
       id: '/trust'
       path: '/trust'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   InstitutionsRoute: InstitutionsRoute,
   IntelligenceRoute: IntelligenceRoute,
   PlatformRoute: PlatformRoute,
+  SandboxRoute: SandboxRoute,
   TrustRoute: TrustRoute,
   ApiBriefingRoute: ApiBriefingRoute,
 }

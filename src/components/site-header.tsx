@@ -37,16 +37,18 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={sandbox.href}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to={sandbox.href}
             title={sandbox.title}
-            aria-label={sandbox.ariaLabel}
-            className="inline-flex min-h-11 items-center text-sm text-muted hover:text-ink"
+            className={cn(
+              "inline-flex min-h-11 items-center text-sm",
+              pathname === sandbox.href
+                ? "text-ink underline decoration-signal decoration-2 underline-offset-8"
+                : "text-muted hover:text-ink",
+            )}
           >
             {sandbox.label}
-          </a>
+          </Link>
           <Button asChild>
             <Link to="/briefing">Request a briefing</Link>
           </Button>
@@ -81,17 +83,17 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={sandbox.href}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={sandbox.href}
               title={sandbox.title}
-              aria-label={sandbox.ariaLabel}
               onClick={() => setOpen(false)}
-              className="flex min-h-11 items-center border-b border-line text-base text-muted"
+              className={cn(
+                "flex min-h-11 items-center border-b border-line text-base",
+                pathname === sandbox.href ? "text-ink" : "text-muted",
+              )}
             >
               {sandbox.label}
-            </a>
+            </Link>
             <Button asChild className="mt-3 w-full">
               <Link to="/briefing" onClick={() => setOpen(false)}>
                 Request a briefing

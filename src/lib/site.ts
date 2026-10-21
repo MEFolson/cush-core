@@ -16,10 +16,11 @@ export const nav = [
 ] as const;
 
 export const sandbox = {
-  href: "https://cushpayments.co.uk:8443/",
+  href: "/sandbox",
   label: "Sandbox",
   title: "Cush Core Portal",
-  ariaLabel: "Sandbox, Cush Core Portal (opens in a new tab)",
+  portalHref: "https://cushpayments.co.uk:8443/",
+  portalLabel: "Cush Core Portal",
 } as const;
 
 export const layers = [
