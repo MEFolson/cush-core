@@ -299,7 +299,7 @@ export const agents = [
     id: "routing",
     name: "Routing",
     title: "The cheapest viable rail.",
-    body: "Optional. Where the institution wants it, an agent suggests among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX on cost, success rate, and mandate, inside parameters the institution defines.",
+    body: "Optional. Where the institution wants it, an agent suggests a rail from Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX based on cost, success rate and mandate, inside parameters the institution defines.",
   },
   {
     id: "recon",

@@ -113,9 +113,9 @@ export const cushBlockchain: CopyBlock = {
     "The Cush Blockchain is the ledger inside Cush Core, licensable with the platform. It is designed for institutions that run their own infrastructure and answer to their own supervisors.",
   ],
   items: [
-    { label: "No network vote.", text: "There is no single global chain and no public consensus. Every customer, account and contract keeps its own chain, so a posting never waits on the rest of the network." },
+    { label: "Not full consensus.", text: "There is no single global chain and no general purpose consensus. Every customer, account and contract keeps its own chain, so a posting never waits on the rest of the network." },
     { label: "Permissioned by design.", text: "Nodes are known and registered, not open to anyone. Each chain is tamper evident, hash linked with BLAKE3." },
-    { label: "Built on PostgreSQL.", text: "Shards are backed by PostgreSQL, a database bank teams already know. When a node stops responding, a spare takes over its shards automatically in one to two seconds." },
+    { label: "Built on PostgreSQL.", text: "Shards are backed by PostgreSQL. When a node stops responding, a spare takes over its shards automatically in one to two seconds." },
     { label: "Every commit is signed.", text: "Every commit carries a transaction signature, and nodes check each message so a removed or out of date node cannot write." },
     { label: "Encrypted and examinable.", text: "Data on the chain is encrypted. A read only viewer for examiners is planned, so an examiner can see the records the institution grants." },
     { label: "Models do not post.", text: "Models explain and suggest. Postings are made by deterministic smart contracts, inside the permissions the institution sets." },
