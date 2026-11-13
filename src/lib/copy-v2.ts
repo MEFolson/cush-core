@@ -14,13 +14,13 @@ export type CopyBlock = {
 export const examinerNode: CopyBlock = {
   id: "supervisory-access",
   eyebrow: "Supervisory access",
-  headline: "Give the examiner a node.",
+  headline: "Give the examiner a view.",
   body: [
-    "Cush Core is designed so a supervisor can hold a read only node of the ledger. The examiner reads the same book the institution posts to and replays any posting, risk score or rail choice without waiting for an extract. The institution grants the access. The node can read. It cannot post.",
+    "Cush Core is designed so a supervisor can read the same book the institution posts to. Data on the Cush Blockchain is encrypted, and a read only examiner viewer is planned to show the supervisor the records the institution grants. The viewer can read. It cannot post.",
   ],
   faq: {
     q: "Can our supervisor read the ledger directly?",
-    a: "That is the design. The institution can grant an examiner a read only node of the book, with full replay. Scope, location and terms are agreed between the institution and its supervisor. The node never carries the right to post.",
+    a: "That is the design. A read only examiner viewer is planned, so the institution can give its supervisor access to the records it grants. Scope, location and terms are agreed between the institution and its supervisor. The viewer never carries the right to post.",
   },
 };
 
@@ -33,7 +33,7 @@ export const oneRecord: CopyBlock = {
   ],
   faq: {
     q: "Are risk decisions and incidents on the same chain as postings?",
-    a: "That is the direction of the design. Postings and contract executions are recorded on the BLAKE3 ledger today. Carrying the same chain to risk decisions and incidents is part of the build, and the briefing sets out what is complete.",
+    a: "That is the direction of the design. The design records postings and contract executions on the Cush Blockchain, hash linked with BLAKE3. Carrying the same chain to risk decisions and incidents is part of the build, and the briefing sets out what is complete.",
   },
 };
 
@@ -72,7 +72,7 @@ export const intentAndExecution: CopyBlock = {
   ],
   faq: {
     q: "Can a model change what the ledger records?",
-    a: "No. Models explain, summarise and guide. Postings are made by deterministic smart contracts on the ledger, inside the permissions the institution sets.",
+    a: "No. AI on the Cush Blockchain is advisory only. Models explain, summarise and suggest. Postings are made by deterministic smart contracts on the ledger, inside the permissions the institution sets.",
   },
 };
 
@@ -105,16 +105,33 @@ export const replayExact: CopyBlock = {
   },
 };
 
+export const cushBlockchain: CopyBlock = {
+  id: "cush-blockchain",
+  eyebrow: "The Cush Blockchain",
+  headline: "A blockchain built for banks, not for public consensus.",
+  body: [
+    "The Cush Blockchain is the ledger inside Cush Core, licensable with the platform. It is designed for institutions that run their own infrastructure and answer to their own supervisors.",
+  ],
+  items: [
+    { label: "Not full consensus.", text: "There is no single global chain and no general purpose consensus. Every customer, account and contract keeps its own chain, so a posting never waits on the rest of the network." },
+    { label: "Permissioned by design.", text: "Nodes are known and registered, not open to anyone. Each chain is tamper evident, hash linked with BLAKE3." },
+    { label: "Built on PostgreSQL.", text: "Shards are backed by PostgreSQL. When a node stops responding, a spare takes over its shards automatically in one to two seconds." },
+    { label: "Every commit is signed.", text: "Every commit carries a transaction signature, and nodes check each message so a removed or out of date node cannot write." },
+    { label: "Encrypted and examinable.", text: "Data on the chain is encrypted. A read only viewer for examiners is planned, so an examiner can see the records the institution grants." },
+    { label: "Models do not post.", text: "Models explain and suggest. Postings are made by deterministic smart contracts, inside the permissions the institution sets." },
+  ],
+};
+
 export const objectLedger: CopyBlock = {
   id: "object-centric-ledger",
   eyebrow: "Object centric ledger",
   headline: "Every customer, account and contract keeps its own chain.",
   body: [
-    "The Cush Core ledger is object centric: every customer, account and contract has its own chain of events, hash linked with BLAKE3. Records are append only and never modified. Chains are spread across nodes with automatic shard failover, and real time projections give current state without replaying the full chain.",
+    "The Cush Blockchain is object centric: every customer, account and contract has its own chain of events, hash linked with BLAKE3. Records are append only and never modified. Chains are spread across shards backed by PostgreSQL, a spare node takes over a failed node's shards in one to two seconds, and real time projections give current state without replaying the full chain.",
   ],
   faq: {
     q: "What happens to the ledger if a node fails?",
-    a: "Chains are distributed across nodes. When a node fails, its shards are reassigned automatically and work continues without operator intervention.",
+    a: "Chains are spread across shards on separate nodes, each backed by PostgreSQL. When a node stops responding, the coordinators remove it from the registry and a spare node takes over its shards in one to two seconds. A failed node never resumes ownership. It can only return as a spare.",
   },
 };
 
@@ -236,7 +253,7 @@ export const scaleOut: CopyBlock = {
   eyebrow: "Scale",
   headline: "Scale out, not up.",
   body: [
-    "Stateless services scale independently by adding instances. Each business object owns its own chain, so many objects are processed in parallel, with automatic shard failover and specialist workloads routed to the right node. PostgreSQL gives ACID guarantees at the data layer, and rolling deploys avoid customer facing downtime.",
+    "Stateless services scale independently by adding instances. Each business object owns its own chain, so many objects are processed in parallel, with automatic failover to spare nodes and specialist workloads routed to the right node. PostgreSQL gives ACID guarantees at the data layer, and rolling deploys avoid customer facing downtime.",
   ],
 };
 

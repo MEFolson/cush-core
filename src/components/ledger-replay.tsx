@@ -8,7 +8,7 @@ const STEPS = [
     label: "Instruction",
     title: "£12,400 received · Faster Payments",
     detail:
-      "Originating institution: corporate in Manchester. Beneficiary: current account at the licensed bank, London. Purpose: supplier settlement.",
+      "Originating institution: corporate in Manchester. Beneficiary: current account at the receiving bank, London. Purpose: supplier settlement.",
   },
   {
     id: "policy",
@@ -43,7 +43,7 @@ const STEPS = [
     label: "Credit",
     title: "Account credited · advice issued",
     detail:
-      "Beneficiary name confirmed. The customer sees the licensed institution’s brand, not ours.",
+      "Beneficiary name confirmed. The customer sees the institution’s brand, not ours.",
   },
 ] as const;
 
@@ -147,7 +147,7 @@ export function LedgerReplay() {
             </div>
           </dl>
           <p className="mt-6 text-xs text-muted">
-            Production ledger uses BLAKE3. This walk-through is illustrative of the
+            The Cush Blockchain uses BLAKE3. This walk-through is illustrative of the
             replay a supervisor is shown.
           </p>
         </div>
