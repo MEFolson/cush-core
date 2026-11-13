@@ -284,7 +284,7 @@ export const institutions = [
     index: "04",
     name: "Central banks and development banks",
     title: "National-scale rails with an examination trail.",
-    body: "Capacity is scarce in licensed cores and supervisory expertise, not in another SaaS overlay. Agents on an immutable ledger scale that expertise without a second IT estate.",
+    body: "Capacity is scarce in core platforms and supervisory expertise, not in another SaaS overlay. Agents on an immutable ledger scale that expertise without a second IT estate.",
   },
 ] as const;
 
@@ -299,7 +299,7 @@ export const agents = [
     id: "routing",
     name: "Routing",
     title: "The cheapest viable rail.",
-    body: "Agents select among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX on cost, success rate, and mandate, not a static waterfall.",
+    body: "Optional. Where the institution wants it, an agent chooses among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX on cost, success rate, and mandate, inside parameters the institution defines.",
   },
   {
     id: "recon",
@@ -436,7 +436,7 @@ export const examinationFaqs = [
   },
   {
     q: "Who holds the system of record?",
-    a: "The institution. Production posts to an immutable ledger under your licence. Cush Core is not a multi-tenant SaaS interposed between you and the books.",
+    a: "The institution. Postings are written to an append only ledger the institution holds, under its licence. Cush Core is not a multi-tenant SaaS interposed between you and the books.",
   },
   {
     q: "How do agents remain inside mandate?",

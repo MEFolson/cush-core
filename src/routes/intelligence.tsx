@@ -101,7 +101,7 @@ function IntelligencePage() {
             </div>
             <p className="max-w-[65ch] text-sm leading-relaxed text-muted lg:col-span-7 lg:pt-8">
               The bank owns thresholds, typologies, escalations, and the permission
-              an agent has to act. The walk-through below is illustrative. Production
+              an agent has to act. The walk-through below is illustrative. The Cush Blockchain
               uses BLAKE3.
             </p>
           </div>

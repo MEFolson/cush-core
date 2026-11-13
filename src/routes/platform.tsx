@@ -120,7 +120,7 @@ function PlatformPage() {
           </div>
           <p className="max-w-[48ch] text-sm leading-relaxed text-muted lg:col-span-5">
             Faster Payments, SEPA, Fedwire, cards, and SWIFT inbound. CHAPS, TARGET2,
-            FAST, PIX, and SWIFT outbound. Agents route. The ledger is the book.
+            FAST, PIX, and SWIFT outbound. Routing follows rules you set. The ledger is the book.
           </p>
         </div>
         <div className="mx-auto max-w-6xl px-5 sm:px-8">

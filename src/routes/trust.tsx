@@ -9,6 +9,7 @@ import {
   accessControl,
   authentication,
   complianceByDesign,
+  cushBlockchain,
   examinerNode,
   objectLedger,
   observability,
@@ -43,7 +44,7 @@ function TrustPage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Ledger</p>
             <h2 className="mt-4 font-display text-3xl font-normal">The book is the evidence.</h2>
             <p className="mt-5 max-w-[40ch] text-sm leading-relaxed text-muted">
-              Production posts to an immutable BLAKE3 ledger. Multi-entity books
+              Every posting is written to the Cush Blockchain, an append only ledger hash linked with BLAKE3. Multi-entity books
               across companies, countries, and currencies. Agents follow rules the
               institution writes.
             </p>
@@ -64,6 +65,8 @@ function TrustPage() {
       <CopySection block={oneRecord} />
 
       <CopySection block={objectLedger} />
+
+      <CopySection block={cushBlockchain} />
 
       <section className="border-b border-line bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:py-20">

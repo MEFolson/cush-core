@@ -147,7 +147,7 @@ export function LedgerReplay() {
             </div>
           </dl>
           <p className="mt-6 text-xs text-muted">
-            Production ledger uses BLAKE3. This walk-through is illustrative of the
+            The Cush Blockchain uses BLAKE3. This walk-through is illustrative of the
             replay a supervisor is shown.
           </p>
         </div>
