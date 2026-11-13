@@ -275,7 +275,7 @@ export const institutions = [
   {
     id: "digital",
     index: "03",
-    name: "Digital banks and licensed PSPs",
+    name: "Digital banks and PSPs",
     title: "A sidecar for a digital brand, on a ledger a supervisor can read.",
     body: "Sit beside the incumbent core when the house will not rip and replace. Governed product blueprints, multi-entity isolation, and agentic compliance under your licence.",
   },
@@ -299,7 +299,7 @@ export const agents = [
     id: "routing",
     name: "Routing",
     title: "The cheapest viable rail.",
-    body: "Optional. Where the institution wants it, an agent chooses among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX on cost, success rate, and mandate, inside parameters the institution defines.",
+    body: "Optional. Where the institution wants it, an agent suggests among Faster Payments, SEPA, Fedwire, SWIFT, CHAPS, TARGET2, FAST, and PIX on cost, success rate, and mandate, inside parameters the institution defines.",
   },
   {
     id: "recon",
@@ -436,7 +436,7 @@ export const examinationFaqs = [
   },
   {
     q: "Who holds the system of record?",
-    a: "The institution. Postings are written to an append only ledger the institution holds, under its licence. Cush Core is not a multi-tenant SaaS interposed between you and the books.",
+    a: "The institution. The design writes postings to an append only ledger the institution holds, under its licence. Cush Core is not a multi-tenant SaaS interposed between you and the books.",
   },
   {
     q: "How do agents remain inside mandate?",

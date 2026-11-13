@@ -183,7 +183,7 @@ function Home() {
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Principals</p>
             <h2 className="mt-4 font-display text-3xl font-normal">The people who will sit the examination.</h2>
             <p className="mt-5 max-w-[40ch] text-sm leading-relaxed text-muted">
-              75+ years in regulated payments belongs with these careers. It is not
+              75+ years in payments belongs with these careers. It is not
               an operating metric of the platform. Direct CHAPS membership lineage
               sits with the founder: the first non-bank PSP onboarded by the Bank
               of England as a Direct CHAPS member.

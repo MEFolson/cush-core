@@ -112,7 +112,7 @@ function IntelligencePage() {
       <section className="bg-paper">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-14 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p className="max-w-[52ch] text-sm leading-relaxed text-muted">
-            Walk a live instruction from Faster Payments to the customer’s account,
+            Walk an instruction from Faster Payments to the customer’s account,
             with the agent traces a supervisor will one day request.
           </p>
           <Button asChild>

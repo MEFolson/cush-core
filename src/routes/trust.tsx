@@ -23,7 +23,7 @@ export const Route = createFileRoute("/trust")({
     pageMeta({
       title: "Governance",
       description:
-        "Immutable BLAKE3 ledger, agents under mandate, and principals with regulated lineage. Built to be examined.",
+        "Immutable BLAKE3 ledger, agents under mandate, and principals with decades in payments. Built to be examined.",
     }),
   component: TrustPage,
 });
@@ -44,7 +44,7 @@ function TrustPage() {
             <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-signal">Ledger</p>
             <h2 className="mt-4 font-display text-3xl font-normal">The book is the evidence.</h2>
             <p className="mt-5 max-w-[40ch] text-sm leading-relaxed text-muted">
-              Every posting is written to the Cush Blockchain, an append only ledger hash linked with BLAKE3. Multi-entity books
+              The design writes every posting to the Cush Blockchain, an append only ledger hash linked with BLAKE3. Multi-entity books
               across companies, countries, and currencies. Agents follow rules the
               institution writes.
             </p>

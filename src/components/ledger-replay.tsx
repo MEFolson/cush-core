@@ -8,7 +8,7 @@ const STEPS = [
     label: "Instruction",
     title: "£12,400 received · Faster Payments",
     detail:
-      "Originating institution: corporate in Manchester. Beneficiary: current account at the licensed bank, London. Purpose: supplier settlement.",
+      "Originating institution: corporate in Manchester. Beneficiary: current account at the receiving bank, London. Purpose: supplier settlement.",
   },
   {
     id: "policy",
@@ -43,7 +43,7 @@ const STEPS = [
     label: "Credit",
     title: "Account credited · advice issued",
     detail:
-      "Beneficiary name confirmed. The customer sees the licensed institution’s brand, not ours.",
+      "Beneficiary name confirmed. The customer sees the institution’s brand, not ours.",
   },
 ] as const;
 
