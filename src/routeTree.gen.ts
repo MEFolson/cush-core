@@ -17,6 +17,7 @@ import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as SandboxRouteImport } from './routes/sandbox'
 import { Route as TrustRouteImport } from './routes/trust'
 import { Route as ApiBriefingRouteImport } from './routes/api/briefing'
+import { Route as InsightsIndexRouteImport } from './routes/insights.index'
 import { Route as InsightsCushBlockchainRouteImport } from './routes/insights.cush-blockchain'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const ApiBriefingRoute = ApiBriefingRouteImport.update({
   path: '/api/briefing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/insights/',
+  path: '/insights/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InsightsCushBlockchainRoute = InsightsCushBlockchainRouteImport.update({
   id: '/insights/cush-blockchain',
   path: '/insights/cush-blockchain',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/trust': typeof TrustRoute
   '/api/briefing': typeof ApiBriefingRoute
   '/insights/cush-blockchain': typeof InsightsCushBlockchainRoute
+  '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/trust': typeof TrustRoute
   '/api/briefing': typeof ApiBriefingRoute
   '/insights/cush-blockchain': typeof InsightsCushBlockchainRoute
+  '/insights': typeof InsightsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/trust': typeof TrustRoute
   '/api/briefing': typeof ApiBriefingRoute
   '/insights/cush-blockchain': typeof InsightsCushBlockchainRoute
+  '/insights/': typeof InsightsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/trust'
     | '/api/briefing'
     | '/insights/cush-blockchain'
+    | '/insights/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/trust'
     | '/api/briefing'
     | '/insights/cush-blockchain'
+    | '/insights'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/trust'
     | '/api/briefing'
     | '/insights/cush-blockchain'
+    | '/insights/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +157,7 @@ export interface RootRouteChildren {
   TrustRoute: typeof TrustRoute
   ApiBriefingRoute: typeof ApiBriefingRoute
   InsightsCushBlockchainRoute: typeof InsightsCushBlockchainRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiBriefingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/': {
+      id: '/insights/'
+      path: '/insights'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/insights/cush-blockchain': {
       id: '/insights/cush-blockchain'
       path: '/insights/cush-blockchain'
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   TrustRoute: TrustRoute,
   ApiBriefingRoute: ApiBriefingRoute,
   InsightsCushBlockchainRoute: InsightsCushBlockchainRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
