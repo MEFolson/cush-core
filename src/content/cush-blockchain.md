@@ -2,13 +2,13 @@
 
 **Standfirst:** Every customer keeps its own tamper evident chain, commits can be backed by a transaction signature, and no single global chain stands between a bank and its books.
 
-*By Matthew Ekow Folson, Founder and Group CEO, Cush Payments*
+*By Jose Luis Caldeira, CTO and Chief Architect, Cush Payments*
 
 ---
 
 Core banking technology is ripe for disruption. Most banks run their books on systems designed decades ago, wrapped in layers of vendors added one at a time. Each layer adds a reconciliation, a contract and another place where the truth can drift. When a supervisor asks what happened to a payment, the answer is often pieced together from several systems after the fact.
 
-At Cush, we think the ledger itself should be the evidence. That is the idea behind the Cush Blockchain, the ledger inside Cush Core. Jose Luis Caldeira, our CTO and Chief Architect, has set out its design in a whitepaper. I want to explain in plain terms what it does and why we chose to build it this way.
+At Cush, we think the ledger itself should be the evidence. That is the idea behind the Cush Blockchain, the ledger inside Cush Core. I have set out its design in a whitepaper. Here I want to explain in plain terms what it does and why we chose to build it this way.
 
 ## A blockchain designed for banks
 
@@ -30,7 +30,7 @@ Banks do not need novelty in their storage layer. They need something their team
 
 Each shard has one owning node, and failover is built into the nodes themselves. Coordinator servers keep track of which nodes are alive, what each node can do and which node owns which shard. When a node stops responding, the coordinators confirm the loss with each other rather than trusting a single view. Spare nodes are ranked in a fixed, deterministic order, so every honest coordinator reaches the same answer. The chosen replacement must have the right capabilities, the capacity to take on the work and a match for the shard's database. Promotion is agreed by a quorum vote. If a quorum cannot be reached, the shard waits rather than risk two owners.
 
-The replacement connects to the same PostgreSQL database and schema, so no data has to move. Nodes send the coordinators a heartbeat roughly every two seconds, so Jose expects a spare node to take over a failed node's shards in one to two seconds. That is his expected figure, not a measurement. A failed node never resumes ownership. It can only return as a spare.
+The replacement connects to the same PostgreSQL database and schema, so no data has to move. Nodes send the coordinators a heartbeat roughly every two seconds, so I expect a spare node to take over a failed node's shards in one to two seconds. That is my expected figure, not a measurement. A failed node never resumes ownership. It can only return as a spare.
 
 ## Narrow by design
 
