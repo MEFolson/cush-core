@@ -11,7 +11,7 @@ export const nav = [
   { href: "/intelligence", label: "Control plane" },
   { href: "/institutions", label: "Institutions" },
   { href: "/trust", label: "Governance" },
-  { href: "/insights/cush-blockchain", label: "Insights" },
+  { href: "/insights", label: "Insights" },
 ] as const;
 
 export const sandbox = {
