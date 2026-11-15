@@ -20,7 +20,7 @@ function InsightsPage() {
         folio="Insights"
         kicker="Insights"
         title="Insights"
-        lead="Articles from Cush on the design of Cush Core and the Cush Blockchain."
+        lead="Notes from the Cush team on how Cush Core and the Cush Blockchain are designed for banks, payment companies and central banks."
       />
       <section className="bg-paper">
         <ul className="mx-auto max-w-6xl">
