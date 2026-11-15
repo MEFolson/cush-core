@@ -116,7 +116,7 @@ export const cushBlockchain: CopyBlock = {
     { label: "Not full consensus.", text: "There is no single global chain and no general purpose consensus. Every customer, account and contract keeps its own chain, so a posting never waits on the rest of the network." },
     { label: "Permissioned by design.", text: "Nodes are known and registered, not open to anyone. Each chain is tamper evident, hash linked with BLAKE3." },
     { label: "Built on PostgreSQL.", text: "Shards are backed by PostgreSQL. When a node stops responding, a spare takes over its shards automatically in one to two seconds." },
-    { label: "Every write is attributable.", text: "A commit can be backed by a transaction signature, and nodes check each message so that a removed or out of date node cannot write." },
+    { label: "Every write is attributable.", text: "Every commit is backed by a transaction signature, and nodes check each message so that a removed or out of date node cannot write." },
     { label: "Encrypted and examinable.", text: "Data on the chain is encrypted. A read only viewer for examiners is planned, so an examiner can see the records the institution grants." },
     { label: "Models do not post.", text: "Models explain and suggest. In the Cush Blockchain design, postings are made by deterministic smart contracts, inside the permissions the institution sets." },
   ],
