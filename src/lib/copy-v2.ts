@@ -55,7 +55,7 @@ export const contractIsProduct: CopyBlock = {
   eyebrow: "Contract",
   headline: "The contract is the product.",
   body: [
-    "Every product in Cush Core is a versioned blueprint, and every payment, fee and interest accrual runs as a smart contract bound to it. Each sale creates a customer instance of the contract, not a copy of the code. A new version never breaks a contract already issued.",
+    "In the Cush Core design, every product is a versioned blueprint, and every payment, fee and interest accrual runs as a smart contract bound to it. Each sale creates a customer instance of the contract, not a copy of the code. A new version never breaks a contract already issued.",
   ],
   faq: {
     q: "Is a product a configuration or a contract?",
@@ -68,11 +68,11 @@ export const intentAndExecution: CopyBlock = {
   eyebrow: "Intent and execution",
   headline: "AI reads the intent. The ledger keeps the promise.",
   body: [
-    "Explainable AI helps operators and customers work through what they need, in plain language. The money moves only through deterministic smart contracts: the same inputs always produce the same outputs, and every execution is recorded on the ledger. Flexible in how people ask. Exact in what the book records.",
+    "Explainable AI helps operators and customers work through what they need, in plain language. In the Cush Core design, money moves only through deterministic smart contracts: the same inputs always produce the same outputs, and every execution is recorded on the ledger. Flexible in how people ask. Exact in what the book records.",
   ],
   faq: {
     q: "Can a model change what the ledger records?",
-    a: "No. AI on the Cush Blockchain is advisory only. Models explain, summarise and suggest. Postings are made by deterministic smart contracts on the ledger, inside the permissions the institution sets.",
+    a: "No. In the Cush Blockchain design, AI is advisory only. Models explain, summarise and suggest. Postings are made by deterministic smart contracts on the ledger, inside the permissions the institution sets.",
   },
 };
 
@@ -97,7 +97,7 @@ export const replayExact: CopyBlock = {
   eyebrow: "Smart contract execution",
   headline: "Every transaction, replayed exactly as it ran.",
   body: [
-    "Every financial operation in Cush Core, whether a payment, a fee or an interest accrual, is a smart contract bound to the product catalogue. Contracts are built from reusable pipelines, every version is immutable, and any execution can be replayed exactly as it ran on day one. The institution can show a transaction was correct without asking a developer.",
+    "In the Cush Core design, every financial operation, whether a payment, a fee or an interest accrual, is a smart contract bound to the product catalogue. Contracts are built from reusable pipelines, every version is immutable, and any execution can be replayed exactly as it ran on day one. The institution can show a transaction was correct without asking a developer.",
   ],
   faq: {
     q: "Can we prove how a past transaction was calculated?",
@@ -116,7 +116,7 @@ export const cushBlockchain: CopyBlock = {
     { label: "Not full consensus.", text: "There is no single global chain and no general purpose consensus. Every customer, account and contract keeps its own chain, so a posting never waits on the rest of the network." },
     { label: "Permissioned by design.", text: "Nodes are known and registered, not open to anyone. Each chain is tamper evident, hash linked with BLAKE3." },
     { label: "Built on PostgreSQL.", text: "Shards are backed by PostgreSQL. When a node stops responding, a spare takes over its shards automatically in one to two seconds." },
-    { label: "Knowing who wrote what.", text: "A commit can be backed by a transaction signature, and nodes check each message so that a removed or out of date node cannot write." },
+    { label: "Every write is attributable.", text: "Every commit is backed by a transaction signature, and nodes check each message so that a removed or out of date node cannot write." },
     { label: "Encrypted and examinable.", text: "Data on the chain is encrypted. A read only viewer for examiners is planned, so an examiner can see the records the institution grants." },
     { label: "Models do not post.", text: "Models explain and suggest. In the Cush Blockchain design, postings are made by deterministic smart contracts, inside the permissions the institution sets." },
   ],
@@ -192,7 +192,7 @@ export const paymentsProcessing: CopyBlock = {
   eyebrow: "Payments processing",
   headline: "From instruction to settlement, in one place.",
   body: [
-    "Each payment is a ledger command, recorded from instruction to confirmation. Smart contracts validate scheme confirmations and post settlement events automatically, and a dedicated payments service applies scheme rules, cut offs and retries. Shadow ledger sync keeps an existing core or accounting system in step.",
+    "In the Cush Core design, each payment is a ledger command, recorded from instruction to confirmation. Smart contracts validate scheme confirmations and post settlement events automatically, and a dedicated payments service applies scheme rules, cut offs and retries. Shadow ledger sync keeps an existing core or accounting system in step.",
   ],
   faq: {
     q: "Must we retire our existing core to use Cush Core payments?",
