@@ -175,6 +175,12 @@ export default defineConfig(({ command, isPreview }) => ({
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.
             serverDir: "./server",
+            // Serve the AI-reader company file as text, not a download.
+            routeRules: {
+              "/company.md": {
+                headers: { "content-type": "text/markdown; charset=utf-8" },
+              },
+            },
           }),
         ]
       : []),
