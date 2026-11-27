@@ -1,4 +1,5 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { agentDiscoveryMeta } from "@/lib/agent-search";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
@@ -9,8 +10,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        title:
-          "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
+        title: "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
       },
       {
         name: "description",
@@ -18,12 +18,12 @@ export const Route = createRootRoute({
           "Cush Core is licensable core banking for global banks, Tier 1 institutions and central banks. Immutable ledger. Institutional mandate. Clearing and settlement on one system of record.",
       },
       { name: "theme-color", content: "#f4f1ea" },
+      ...agentDiscoveryMeta(),
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Cush Core" },
       {
         property: "og:title",
-        content:
-          "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
+        content: "Cush Core · Licensable core banking for global banks, Tier 1 and central banks",
       },
       {
         property: "og:description",

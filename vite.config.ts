@@ -142,6 +142,86 @@ function authPopupPlugin(): Plugin {
   };
 }
 
+/**
+ * Dev-server handler for /.well-known/search (including HTTP QUERY).
+ * Production and `vite preview` use Nitro middleware instead (`server/middleware/agent-search.ts`).
+ */
+function agentSearchPlugin(): Plugin {
+  return {
+    name: "cush-core:agent-search",
+    apply: "serve",
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        try {
+          const rawUrl = req.url ?? "";
+          const pathOnly = rawUrl.split("?", 1)[0] ?? "";
+          if (pathOnly !== "/.well-known/search") {
+            next();
+            return;
+          }
+
+          const host = String(
+            req.headers["x-forwarded-host"] ?? req.headers.host ?? "localhost:8080",
+          );
+          const proto = String(
+            req.headers["x-forwarded-proto"] ??
+              ((req.socket as { encrypted?: boolean } | undefined)?.encrypted ? "https" : "http"),
+          );
+          const requestHeaders = new Headers();
+          for (const [key, value] of Object.entries(req.headers)) {
+            if (value === undefined) continue;
+            if (Array.isArray(value)) {
+              for (const item of value) requestHeaders.append(key, item);
+            } else {
+              requestHeaders.set(key, value);
+            }
+          }
+
+          const method = (req.method ?? "GET").toUpperCase();
+          const body =
+            method === "GET" || method === "HEAD" || method === "OPTIONS"
+              ? undefined
+              : await new Promise<Buffer>((resolve, reject) => {
+                  const chunks: Buffer[] = [];
+                  req.on("data", (chunk) => {
+                    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+                  });
+                  req.on("end", () => resolve(Buffer.concat(chunks)));
+                  req.on("error", reject);
+                });
+
+          const request = new Request(`${proto}://${host}${rawUrl}`, {
+            method,
+            headers: requestHeaders,
+            body: body && body.length ? new Uint8Array(body) : undefined,
+          });
+
+          const mod = (await server.ssrLoadModule("/src/lib/agent-search.ts")) as {
+            handleAgentSearchRequest: (incoming: Request) => Promise<Response>;
+          };
+          const response = await mod.handleAgentSearchRequest(request);
+          res.statusCode = response.status;
+          response.headers.forEach((value, key) => {
+            res.setHeader(key, value);
+          });
+          if (method === "HEAD" || method === "OPTIONS" || response.status === 204) {
+            res.end();
+            return;
+          }
+          res.end(Buffer.from(await response.arrayBuffer()));
+        } catch (err) {
+          console.error("[cush-core] /.well-known/search handler failed:", err);
+          if (!res.headersSent) {
+            res.statusCode = 500;
+            res.setHeader("content-type", "text/plain; charset=utf-8");
+            res.end("search failed");
+          }
+        }
+      });
+    },
+  };
+}
+
 // `0.0.0.0:8080` is the live-preview contract — don't change host/port.
 // The dev server starts once `src/router.tsx` and `src/routes/` exist — see
 // AGENTS.md § "First scaffold".
@@ -161,6 +241,8 @@ export default defineConfig(({ command, isPreview }) => ({
     pgliteBootstrapPlugin(),
     // Before tanstackStart so /auth/popup never falls through to the SPA.
     authPopupPlugin(),
+    // Before tanstackStart so /.well-known/search is not swallowed by the SPA.
+    agentSearchPlugin(),
     // Dev-only /__app-env, read by scripts/check-auth-invariant.mjs.
     appEnvPlugin(),
     // PWA head + ?install=1 tutorial page; runs before Start/Nitro.
@@ -178,6 +260,9 @@ export default defineConfig(({ command, isPreview }) => ({
             // Serve the AI-reader company file as text, not a download.
             routeRules: {
               "/company.md": {
+                headers: { "content-type": "text/markdown; charset=utf-8" },
+              },
+              "/.well-known/search": {
                 headers: { "content-type": "text/markdown; charset=utf-8" },
               },
             },
